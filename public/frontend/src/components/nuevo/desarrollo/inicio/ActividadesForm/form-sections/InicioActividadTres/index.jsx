@@ -15,7 +15,7 @@ const schema = yup.object({
   }).required();
 
 const InicioActividadTres = () => {
-    const { handleSubmit } = useForm({
+    const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(schema)
     });
     const onSubmit = data => console.log(data);
@@ -24,13 +24,12 @@ const InicioActividadTres = () => {
         <>
             <p>3.- Revisión del proponente es un área/unidad del banco</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-5">
-                
                 <Row className="mb-3">
                     <Col> 
-                        <SelectForm label="Tipo proponente" option="Choose option" />
+                        <SelectForm name="tipoProponente" label="Tipo proponente" options="Choose option" register={register} errors={errors}/>
                     </Col>
                     <Col> 
-                        <SelectForm label="Area BDP" option="Choose option" />
+                        <SelectForm name="areaBDP" label="Area BDP" options="Choose option" register={register} errors={errors}/>
                     </Col>
                 </Row>
                 {/* <input type="submit" /> */}

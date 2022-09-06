@@ -1,11 +1,14 @@
 import Form from 'react-bootstrap/Form';
 
-const SelectForm = ({label, value, option}) => {
+const SelectForm = ({name, label, options, register, errors}) => {
   return (
-    <Form.Select aria-label="Default select example">
-      <option>{label}</option>
-      <option value={value}>{option}</option>
-    </Form.Select>
+      <Form.Group  controlId="formGridState">
+        <Form.Label>{label}</Form.Label>
+        <Form.Select  {...register(name)} defaultValue="Choose...">
+          <option>Choose...</option>
+          <option value="option 1">{options}</option>
+        </Form.Select>
+      </Form.Group>
   );
 }
 
