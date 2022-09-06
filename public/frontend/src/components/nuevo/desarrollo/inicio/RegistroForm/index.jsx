@@ -16,7 +16,7 @@ const RegistroForm = () => {
     
     return (
       <form onSubmit={handleSubmit(onSubmit)}>
-        <InputForm name="firstName" type="text" label="Primer nombre" placeholder="1°" register={register} errors={errors} />
+        <InputForm name="firstName" type="text" label="Primer nombre" textDecoration="1°" register={register} errors={errors} />
         <input type="submit" />
       </form>
     );

@@ -2,6 +2,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import RegistroForm from '../../components/nuevo/desarrollo/inicio/RegistroForm';
+import ActividadesForm from '../../components/nuevo/desarrollo/inicio/ActividadesForm';
 import TabsDesa from '../../components/commons/layouts/TabsEtapas';
 
 const NuevoProyectoDesarrollo = () => {
@@ -26,6 +27,7 @@ const NuevoProyectoDesarrollo = () => {
                 </Nav>
             </Col>
             <Col xs={12} ><RegistroForm /></Col>
+            <Col xs={12} ><ActividadesForm /></Col>
         </Row>
     );
 }
