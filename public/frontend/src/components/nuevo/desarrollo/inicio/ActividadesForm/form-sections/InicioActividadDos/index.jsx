@@ -5,6 +5,7 @@ import InputForm  from "../../../../../../commons/forms/InputForm";
 import SelectForm from "../../../../../../commons/forms/SelectForm";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 
 const schema = yup.object({
     startDate: yup.string().required(),
@@ -35,7 +36,9 @@ const InicioActividadDos = () => {
                 <Row className="mb-3">
                     <InputForm name="observations" placeholder="Observaciones / sugerencias" type="text" label="" textDecoration="" register={register} errors={errors} />
                 </Row>
-                <input type="submit" />
+                {/* <input type="submit" /> */}
+                <Button type="submit" variant="primary">V</Button>
+
             </form>
         </>
       

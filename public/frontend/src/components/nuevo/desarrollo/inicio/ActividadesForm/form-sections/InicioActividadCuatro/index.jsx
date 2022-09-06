@@ -3,6 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import InputForm  from "../../../../../../commons/forms/InputForm";
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 
 const schema = yup.object({
     comments: yup.string().required(),
@@ -21,7 +22,8 @@ const InicioActividadCuatro = () => {
                 <Row className="mb-3">
                     <InputForm name="comments" placeholder="Comentarios" type="text" label="" textDecoration="" register={register} errors={errors} />
                 </Row>
-                <input type="submit" />
+                {/* <input type="submit" /> */}
+                <Button type="submit" variant="primary">V</Button>
             </form>
         </>
       

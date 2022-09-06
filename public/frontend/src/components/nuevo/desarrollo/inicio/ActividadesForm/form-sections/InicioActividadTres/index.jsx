@@ -33,8 +33,8 @@ const InicioActividadTres = () => {
                         <SelectForm label="Area BDP" option="Choose option" />
                     </Col>
                 </Row>
-                <input type="submit" />
-                <Button variant="primary">V</Button>
+                {/* <input type="submit" /> */}
+                <Button type="submit" variant="primary">V</Button>
             </form>
         </>
       
