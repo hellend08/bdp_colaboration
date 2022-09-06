@@ -1,33 +1,18 @@
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Nav from 'react-bootstrap/Nav';
-import RegistroForm from '../../components/nuevo/desarrollo/inicio/RegistroForm';
-import ActividadesForm from '../../components/nuevo/desarrollo/inicio/ActividadesForm';
-import TabsDesa from '../../components/commons/layouts/TabsEtapas';
+import TabsEtapas from '../../components/commons/layouts/TabsEtapas';
+import Inicio from '../../components/nuevo/desarrollo/Inicio';
 
 const NuevoProyectoDesarrollo = () => {
+
     return (
         <Row>
             <Col xs={12}>
-                <TabsDesa />
+                <TabsEtapas />
             </Col>
             <Col xs={12}>
-                <Nav variant="pills" defaultActiveKey="/home">
-                  <Nav.Item>
-                      <Nav.Link eventKey="link-1">Registro</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                      <Nav.Link eventKey="link-2">Actividades</Nav.Link>
-                  </Nav.Item>
-                  <Nav.Item>
-                      <Nav.Link eventKey="disabled" disabled>
-                      Disabled
-                      </Nav.Link>
-                  </Nav.Item>
-                </Nav>
+                <Inicio/>
             </Col>
-            <Col xs={12} ><RegistroForm /></Col>
-            <Col xs={12} ><ActividadesForm /></Col>
         </Row>
     );
 }

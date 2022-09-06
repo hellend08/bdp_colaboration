@@ -4,15 +4,16 @@ const TabsDesa = () => {
     return (
       <Nav variant="tabs" defaultActiveKey="/home">
         <Nav.Item>
-          <Nav.Link eventKey="link-1">Active</Nav.Link>
+          <Nav.Link eventKey="link-1">Inicio</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="link-2">Option 2</Nav.Link>
+          <Nav.Link eventKey="link-2" disabled>Planificación</Nav.Link>
         </Nav.Item>
         <Nav.Item>
-          <Nav.Link eventKey="disabled" disabled>
-            Disabled
-          </Nav.Link>
+          <Nav.Link eventKey="disabled" disabled>Ejecución </Nav.Link>
+        </Nav.Item>
+        <Nav.Item>
+          <Nav.Link eventKey="disabled" disabled>Monitoreo</Nav.Link>
         </Nav.Item>
       </Nav>
     );

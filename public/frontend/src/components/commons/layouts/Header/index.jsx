@@ -21,7 +21,7 @@ const Header = () => {
                                 <NavLink to="/Nuevo_Proyecto_Desarrollo">Proyecto Desarrollo</NavLink>
                             </div>
                             <div>
-                                <NavLink to="/Nuevo_Proyecto_FVC">Proyecto FVC</NavLink>   
+                                <NavLink to="/Nuevo_Proyecto_FVC">Proyecto FVC</NavLink>
                             </div>
                         </Dropdown.Menu>
                     </Dropdown>
