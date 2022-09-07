@@ -23,10 +23,8 @@ const InicioActividadSeis = () => {
             <p>6.- Consulta a las Listas Especiales de Control (LEC)</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <Row className="mb-3">
-                <SelectForm name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
-
+                    <SelectForm name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
                 </Row>
-             
                 {/* <input type="submit" /> */}
                 <Row className="d-flex flex-row-reverse pr-3">
                     <Button className="w-25" type="submit" variant="primary">V</Button>
@@ -35,7 +33,6 @@ const InicioActividadSeis = () => {
 
             </form>
         </>
-      
     );
 }
 
