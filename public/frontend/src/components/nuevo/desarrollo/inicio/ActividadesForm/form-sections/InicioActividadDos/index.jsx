@@ -24,21 +24,24 @@ const InicioActividadDos = () => {
     return (
         <>
             <p>2.- Análisis de la Nota Conceptual  del proyecto considerando el cumplimiento de políticias, salvaguardas ambientales,     criterios de inversión y otros del banco.</p>
-            <form onSubmit={handleSubmit(onSubmit)} className="mb-5">
+            <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <SelectForm name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
-                <Row>
+                <Row className="my-3 gap-4">
                     <Col> 
-                        <InputForm name="startDate" label="Fecha inicio" type="text" placeholder="icono date" register={register} errors={errors} />
+                        <InputForm name="startDate" label="Fecha inicio" type="date" placeholder="icono date" register={register} errors={errors} />
                     </Col>
                     <Col> 
-                        <InputForm name="endDate" label="Fecha fin" type="text"  placeholder="icono date" register={register} errors={errors} />
+                        <InputForm name="endDate" label="Fecha fin" type="date"  placeholder="icono date" register={register} errors={errors} />
                     </Col>
                 </Row>
-                <Row className="mb-3">
+                <Row>
                     <TextareaForm name="observations" label="Observaciones / sugerencias" register={register} errors={errors} />
                 </Row>
                 {/* <input type="submit" /> */}
-                <Button type="submit" variant="primary">V</Button>
+                <Row className="d-flex flex-row-reverse pr-3">
+                    <Button className="w-25" type="submit" variant="primary">V</Button>
+
+                </Row>
 
             </form>
         </>
