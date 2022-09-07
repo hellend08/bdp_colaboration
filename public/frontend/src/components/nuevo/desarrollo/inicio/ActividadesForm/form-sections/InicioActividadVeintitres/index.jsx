@@ -24,9 +24,9 @@ const InicioActividadVeintitres = () => {
                 <Row className="mt-3">
                     <TextareaForm name="comments" label="Comentarios" type="text" register={register} errors={errors} />
                 </Row>
-                <Row className="mb-3">
+                <Row className="mb-3 gap-4">
                     <Col>
-                        <InputModalForm name="minutes"  label="Acta constitución" register={register} errors={errors} />
+                        <InputModalForm name="act"  label="Acta constitución" register={register} errors={errors} />
                     </Col>
                     <Col>
                         <InputModalForm name="matrix" label="Acta constitución" register={register} errors={errors} />

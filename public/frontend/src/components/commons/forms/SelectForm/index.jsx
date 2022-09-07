@@ -2,7 +2,7 @@ import Form from 'react-bootstrap/Form';
 
 const SelectForm = ({name, label, options, register, errors}) => {
   return (
-      <Form.Group  controlId="formGridState">
+      <Form.Group className="mb-3" controlId="formGridState">
         <Form.Label>{label}</Form.Label>
         <Form.Select  {...register(name)} defaultValue="Choose...">
           <option>Choose...</option>
