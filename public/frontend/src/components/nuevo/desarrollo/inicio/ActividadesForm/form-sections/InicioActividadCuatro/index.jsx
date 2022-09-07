@@ -2,6 +2,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import Row from 'react-bootstrap/Row';
+import Button from 'react-bootstrap/Button';
 import TextareaForm from '../../../../../../commons/forms/TextareaForm';
 
 const schema = yup.object({
@@ -17,11 +18,16 @@ const InicioActividadCuatro = () => {
     return (
         <>
             <p className="mb-0">4.- Solicitud de la emisión del informe legal para persona y/o personalidad juridica</p>
-            <form onSubmit={handleSubmit(onSubmit)} className="mb-5">
-                <Row className="mb-3">
+            <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
+                <Row className="mt-3">
                     <TextareaForm name="comments" label="Comentarios" register={register} errors={errors} />
                 </Row>
-                <input type="submit" />
+                {/* <input type="submit" /> */}
+                {/* <Button type="submit" variant="primary">V</Button> */}
+                <Row className="d-flex flex-row-reverse pr-3">
+                    <Button className="w-25" type="submit" variant="primary">V</Button>
+
+                </Row>
             </form>
         </>
       

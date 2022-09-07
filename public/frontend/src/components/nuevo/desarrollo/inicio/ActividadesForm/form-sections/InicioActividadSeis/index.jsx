@@ -3,13 +3,16 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from "yup";
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
-import TextareaForm from '../../../../../../commons/forms/TextareaForm';
+import SelectForm from "../../../../../../commons/forms/SelectForm";
 
 const schema = yup.object({
-    comments: yup.string().required(),
+    startDate: yup.string().required(),
+    endDate: yup.string().required(),
+    observations: yup.string().required(),
+    //age: yup.number().positive().integer().required(),
   }).required();
 
-const InicioActividadCinco = () => {
+const InicioActividadSeis = () => {
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(schema)
     });
@@ -17,21 +20,20 @@ const InicioActividadCinco = () => {
     
     return (
         <>
-            <p className="mb-0">5.- Elaboración del informe de personería y/o personalidad jurídica</p>
+            <p>6.- Consulta a las Listas Especiales de Control (LEC)</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
-                <Row className="mt-3">
-                    <TextareaForm name="comments" label="Comentarios" type="text" register={register} errors={errors} />
+                <Row className="mb-3">
+                    <SelectForm name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
                 </Row>
                 {/* <input type="submit" /> */}
-                {/* <Button type="submit" variant="primary">V</Button> */}
                 <Row className="d-flex flex-row-reverse pr-3">
                     <Button className="w-25" type="submit" variant="primary">V</Button>
 
                 </Row>
+
             </form>
         </>
-      
     );
 }
 
-export default InicioActividadCinco;
+export default InicioActividadSeis;

@@ -9,7 +9,7 @@ const schema = yup.object({
     comments: yup.string().required(),
   }).required();
 
-const InicioActividadCinco = () => {
+const InicioActividadVeintitres = () => {
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(schema)
     });
@@ -17,7 +17,7 @@ const InicioActividadCinco = () => {
     
     return (
         <>
-            <p className="mb-0">5.- Elaboración del informe de personería y/o personalidad jurídica</p>
+            <p className="mb-0">23.- Recepción y revisión del Acta de Constitución y la Matriz de Interesados por parte de los proponentes</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <Row className="mt-3">
                     <TextareaForm name="comments" label="Comentarios" type="text" register={register} errors={errors} />
@@ -34,4 +34,4 @@ const InicioActividadCinco = () => {
     );
 }
 
-export default InicioActividadCinco;
+export default InicioActividadVeintitres;

@@ -6,11 +6,11 @@ import Inicio from '../../components/nuevo/desarrollo/Inicio';
 const NuevoProyectoDesarrollo = () => {
 
     return (
-        <Row>
+        <Row className="px-5 pt-3">
             <Col xs={12}>
                 <TabsEtapas />
             </Col>
-            <Col xs={12}>
+            <Col xs={12} className="pt-4">
                 <Inicio/>
             </Col>
         </Row>
