@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
-// import ActModal from '../../../nuevo/desarrollo/Inicio/ActividadesForm/form-sections/InicioActividadVeintitres/modals/ActModal';
-import MatrixModal from '../../../nuevo/desarrollo/Inicio/ActividadesForm/form-sections/InicioActividadVeintitres/modals/MatrixModal';
+import ActModal from '../../../nuevo/desarrollo/Inicio/ActividadesForm/form-sections/InicioActividadVeintitres/modals/ActModal';
+// import MatrixModal from '../../../nuevo/desarrollo/Inicio/ActividadesForm/form-sections/InicioActividadVeintitres/modals/MatrixModal';
 
 const InputModalForm = ({name, type, label, register, errors}) => {
 
@@ -22,14 +22,14 @@ const InputModalForm = ({name, type, label, register, errors}) => {
                 +
                 </Button>
                 <p>{errors.firstName?.message}</p>  
-                {/* <ActModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-                /> */}
-                <MatrixModal
+                <ActModal
                 show={modalShow}
                 onHide={() => setModalShow(false)}
                 />
+                {/* <MatrixModal
+                show={modalShow}
+                onHide={() => setModalShow(false)}
+                /> */}
             </InputGroup>
         </Form.Group>
     );

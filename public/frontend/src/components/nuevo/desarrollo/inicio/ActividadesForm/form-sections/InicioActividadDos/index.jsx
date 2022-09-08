@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button';
 import InputForm  from "../../../../../../commons/forms/InputForm";
 import SelectForm from "../../../../../../commons/forms/SelectForm";
 import TextareaForm from '../../../../../../commons/forms/TextareaForm';
+import "../../style.css"
 
 const schema = yup.object({
     startDate: yup.string().required(),
@@ -39,7 +40,7 @@ const InicioActividadDos = () => {
                 </Row>
                 {/* <input type="submit" /> */}
                 <Row className="d-flex flex-row-reverse pr-3">
-                    <Button className="w-25" type="submit" variant="primary">V</Button>
+                    <Button className="btn-sumit" type="submit" variant="primary">V</Button>
 
                 </Row>
 

@@ -3,11 +3,12 @@ import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
+import "./style.css"
 
 const MatrixModal = (props) => {
 
   return (
-    <Modal dialogClassName="modal-90w" {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
+    <Modal dialogClassName="layout-w" {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
       <Modal.Header className="py-2" closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           Matriz de Interesados
@@ -15,11 +16,11 @@ const MatrixModal = (props) => {
       </Modal.Header>
       <Modal.Body>
        
-        <Row>
+        <Row className="mt-3">
         <Col sm={10}>
             <Table striped bordered hover size="sm">
                 <thead>
-                    <tr>
+                    <tr className="fs-6 fw-semibold lh-sm align-middle size-sm">
                         <th>Interesado</th>
                         <th>Objetivo Meta</th>
                         <th>Nivel de Interés</th>

@@ -7,7 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import TextareaForm from '../../../../../../../../commons/forms/TextareaForm';
-
+import "./style.css"
 
 const schema = yup.object({
     comments: yup.string().required(),
@@ -49,7 +49,7 @@ const ActModal = (props) => {
         <Col sm={10}>
             <Table striped bordered hover size="sm">
                 <thead>
-                    <tr>
+                    <tr className="fs-6 fw-semibold lh-sm align-middle size-sm">
                         <th>Hitos</th>
                         <th>Inicio</th>
                         <th>Fin</th>
@@ -101,7 +101,7 @@ const ActModal = (props) => {
         <Col sm={10}>
             <Table striped bordered hover size="sm">
                 <thead>
-                    <tr>
+                    <tr className="fs-6 fw-semibold lh-sm align-middle size-sm">
                         <th>Nivel</th>
                         <th>Cargo</th>
                         <th>Nombre</th>

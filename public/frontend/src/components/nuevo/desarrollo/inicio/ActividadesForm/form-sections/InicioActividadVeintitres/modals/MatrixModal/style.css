@@ -1,0 +1,12 @@
+.layout-w {
+    width: 90%;
+    max-width: none !important;
+}
+
+.size-sm {
+    font-size: 14px !important;
+}
+
+.size-sm  th {
+    padding-inline: .5rem;
+}
