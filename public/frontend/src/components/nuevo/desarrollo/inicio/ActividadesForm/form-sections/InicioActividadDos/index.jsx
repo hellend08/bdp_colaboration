@@ -4,7 +4,7 @@ import * as yup from "yup";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import InputForm  from "../../../../../../commons/forms/InputForm";
+import InputDateForm from "../../../../../../commons/forms/InputDateForm";
 import SelectForm from "../../../../../../commons/forms/SelectForm";
 import TextareaForm from '../../../../../../commons/forms/TextareaForm';
 import "../../style.css"
@@ -30,10 +30,10 @@ const InicioActividadDos = () => {
                 <SelectForm name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
                 <Row className="my-3 gap-4">
                     <Col> 
-                        <InputForm name="startDate" label="Fecha inicio" type="date" placeholder="icono date" register={register} errors={errors} />
+                        <InputDateForm name="startDate" label="Fecha inicio" type="date" register={register} errors={errors} />
                     </Col>
                     <Col> 
-                        <InputForm name="endDate" label="Fecha fin" type="date"  placeholder="icono date" register={register} errors={errors} />
+                        <InputDateForm name="endDate" label="Fecha fin" type="date"  register={register} errors={errors} />
                     </Col>
                 </Row>
                 <Row>

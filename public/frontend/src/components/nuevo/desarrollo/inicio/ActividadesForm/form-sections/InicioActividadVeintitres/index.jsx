@@ -29,7 +29,7 @@ const InicioActividadVeintitres = () => {
                         <InputModalForm name="act"  label="Acta constitución" register={register} errors={errors} />
                     </Col>
                     <Col>
-                        <InputModalForm name="matrix" label="Acta constitución" register={register} errors={errors} />
+                        <InputModalForm name="matrix" label="Matriz interesados" register={register} errors={errors} />
                     </Col>
                 </Row>
                 {/* <input type="submit" /> */}

@@ -1,0 +1,20 @@
+input[type="date"]::-webkit-calendar-picker-indicator {
+    /* display: none;
+    -webkit-appearance: none; */
+    width: 20px;
+    height: 21px;
+    /* font-size: 1rem; */
+    padding: .6rem 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: transparent;
+    background-color: #e9ecef;
+    margin: 0;
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.relativo {
+    position: relative !important;
+}
