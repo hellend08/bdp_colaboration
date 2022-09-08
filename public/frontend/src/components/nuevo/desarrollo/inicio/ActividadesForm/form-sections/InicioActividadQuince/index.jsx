@@ -39,7 +39,9 @@ const InicioActividadQuince = () => {
                 </Row>
                 {/* <input type="submit" /> */}
                 <Row className="d-flex flex-row-reverse pr-3">
-                    <Button className="btn-sumit" type="submit" variant="primary">V</Button>
+                    <Button className="btn-sumit" type="submit" variant="primary">
+                        <i className="bi bi-send-fill"></i>
+                    </Button>
                 </Row>
             </form>
         </>

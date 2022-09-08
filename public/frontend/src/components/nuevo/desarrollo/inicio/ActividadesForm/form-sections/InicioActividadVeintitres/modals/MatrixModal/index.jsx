@@ -9,13 +9,12 @@ const MatrixModal = (props) => {
 
   return (
     <Modal dialogClassName="layout-w" {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
-      <Modal.Header className="py-2" closeButton>
+      <Modal.Header className="py-2 px-4" closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           Matriz de Interesados
         </Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-       
+      <Modal.Body className="px-4">
         <Row className="mt-3">
         <Col sm={10}>
             <Table striped bordered hover size="sm">

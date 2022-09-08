@@ -35,7 +35,9 @@ const InicioActividadVeintitres = () => {
                 {/* <input type="submit" /> */}
                 {/* <Button type="submit" variant="primary">V</Button> */}
                 <Row className="d-flex flex-row-reverse pr-3">
-                    <Button className="btn-sumit" type="submit" variant="primary">V</Button>
+                    <Button className="btn-sumit" type="submit" variant="primary">
+                        <i className="bi bi-send-fill"></i>
+                    </Button>
 
                 </Row>
             </form>
