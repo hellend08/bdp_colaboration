@@ -21,3 +21,10 @@ export const InicioActividadUnoSchema = yup.object({
     aceptaInstrumentoFinanciero: yup.boolean().required(),
     tipoInstrumentoFinanciero: yup.string().required()
 }).required();
+
+
+export const InicioActividadDosSchema = yup.object({
+        startDate: yup.string().required(),
+        endDate: yup.string().required(),
+        observations: yup.string().required(),
+}).required();

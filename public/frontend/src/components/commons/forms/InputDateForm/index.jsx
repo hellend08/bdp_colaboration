@@ -10,7 +10,7 @@ const InputDateForm = ({name, type, label, register, errors}) => {
              {/* className="mb-3" */}
             <Form.Label>{label}</Form.Label>
             <InputGroup hasValidation>
-                <Form.Control className='relativo' {...register(name)} type={type} />
+                <Form.Control className='relativo' {...register(name)} type={type}/>
                 {/* { placeholder && <InputGroup.Text id="inputGroupPrepend">{placeholder}</InputGroup.Text>} */}
                 {/* <InputGroup.Text id="basic-addon1">
                 <i className="bi bi-calendar"></i>
