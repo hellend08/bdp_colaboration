@@ -5,3 +5,8 @@
 .size-sm  th {
     padding-inline: .5rem;
 }
+
+.btn-modal {
+    width: 7.5rem !important;
+    margin-right: 1rem !important;
+}

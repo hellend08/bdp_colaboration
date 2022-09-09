@@ -29,13 +29,15 @@ const InicioActividadVeintitres = () => {
                         <InputModalForm name="act"  label="Acta constitución" register={register} errors={errors} />
                     </Col>
                     <Col>
-                        <InputModalForm name="matrix" label="Acta constitución" register={register} errors={errors} />
+                        <InputModalForm name="matrix" label="Matriz interesados" register={register} errors={errors} />
                     </Col>
                 </Row>
                 {/* <input type="submit" /> */}
                 {/* <Button type="submit" variant="primary">V</Button> */}
                 <Row className="d-flex flex-row-reverse pr-3">
-                    <Button className="btn-sumit" type="submit" variant="primary">V</Button>
+                    <Button className="btn-sumit" type="submit" variant="primary">
+                        <i className="bi bi-send-fill"></i>
+                    </Button>
 
                 </Row>
             </form>
