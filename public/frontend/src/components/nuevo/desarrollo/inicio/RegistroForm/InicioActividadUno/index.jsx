@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
+import { InicioActividadUnoSchema } from '../../../../../../schemas/desarrollo/inicio/inicio-desa-schema';
+import { activitiesStore } from '../../../../../../store/commonsStore';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -8,17 +9,43 @@ import InputForm from '../../../../../commons/forms/InputForm';
 import TextareaForm from '../../../../../commons/forms/TextareaForm';
 import SelectForm from '../../../../../commons/forms/SelectForm';
 import CheckboxForm from '../../../../../commons/forms/CheckboxForm';
-
-const schema = yup.object({
-  descripcion: yup.string().required(),
-  //age: yup.number().positive().integer().required(),
-}).required();
+import { validateBtnForm } from '../../../../../../utils/validate-forms';
 
 const InicioActividadUno = () => {
-    const { register, handleSubmit, formState:{ errors } } = useForm({
-        resolver: yupResolver(schema)
+    const { selectActivity,  enableActivity} = activitiesStore();
+    const { register, handleSubmit, formState:{ errors}, getValues } = useForm({
+      mode: 'onChange',
+      resolver: yupResolver(InicioActividadUnoSchema),
+      defaultValues: {
+        descripcion: "",
+        tipo: "",
+        sector: "",
+        actividadEconomica: "",
+        origen: "",
+        cumplimientoODS: "",
+        objetivos: "",
+        justificacion: "",
+        enfoque: "",
+        aceptaComponentesMitigación: "",
+        areaMitigacion: "",
+        mitigacionEstimada: "",
+        aceptaComponentesAdaptacion: "",
+        cantBeneficiarios: "",
+        poblacion: "",
+        costoTotal: "",
+        duracion: "",
+        aceptaInstrumentoFinanciero: "",
+        tipoInstrumentoFinanciero: ""
+      }
     });
-    const onSubmit = data => console.log(data);
+
+    const onSubmit = data => {
+      if(!Object.values(errors).length) {
+        selectActivity("inicio-actividades");
+        enableActivity("inicio-actividades")
+      }
+      console.log(data);
+    }
     
     return (
       <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
@@ -55,7 +82,7 @@ const InicioActividadUno = () => {
         <Row >
           <CheckboxForm name="aceptaComponentesAdaptacion" label="Componentes de adaptación" register={register} errors={errors}/>
           <Col xs={6}>
-            <InputForm name="beneficiarios" label="N° de beneficiarios" placeholder={null} register={register} errors={errors}/>
+            <InputForm name="cantBeneficiarios" label="N° de beneficiarios" placeholder={null} register={register} errors={errors}/>
           </Col>
           <Col xs={6}>
             <InputForm name="poblacion" label="Población" placeholder="%" register={register} errors={errors}/>
@@ -72,7 +99,9 @@ const InicioActividadUno = () => {
           <SelectForm name="tipoInstrumentoFinanciero" label="Tipo de instrumento financiero" options="option 1" register={register} errors={errors}/>          
         </Row>
         <Row className="d-flex flex-row-reverse pr-3">
-          <Button className="w-25" type="submit" variant="primary">icon</Button>
+          <Button className="w-25" type="submit" variant="primary" >
+            icon
+          </Button>
         </Row>
       </form>
     );
