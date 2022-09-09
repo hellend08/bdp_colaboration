@@ -1,23 +1,24 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
 // import InputForm  from "../../../../../commons/forms/InputForm";
 import SelectForm from "../../../../../../commons/forms/SelectForm";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { InicioActividadTresSchema } from '../../../../../../../schemas/desarrollo/inicio/inicio-desa-schema';
 
-const schema = yup.object({
-    startDate: yup.string().required(),
-    endDate: yup.string().required(),
-    observations: yup.string().required(),
-    //age: yup.number().positive().integer().required(),
-  }).required();
 
 const InicioActividadTres = () => {
+  
     const { register, handleSubmit, formState:{ errors } } = useForm({
-        resolver: yupResolver(schema)
-    });
+        mode: 'onChange',
+        resolver: yupResolver(InicioActividadTresSchema),
+        defaultValues: {
+            tipoProponente: "",
+            areaBDP: "",
+        }
+    })
+
     const onSubmit = data => console.log(data);
     
     return (
@@ -32,13 +33,10 @@ const InicioActividadTres = () => {
                         <SelectForm name="areaBDP" label="Area BDP" options="Choose option" register={register} errors={errors}/>
                     </Col>
                 </Row>
-                {/* <input type="submit" /> */}
-                {/* <Button type="submit" variant="primary">V</Button> */}
                 <Row className="d-flex flex-row-reverse pr-3">
                     <Button className="btn-sumit" type="submit" variant="primary">
                         <i className="bi bi-send-fill"></i>
                     </Button>
-
                 </Row>
             </form>
         </>
