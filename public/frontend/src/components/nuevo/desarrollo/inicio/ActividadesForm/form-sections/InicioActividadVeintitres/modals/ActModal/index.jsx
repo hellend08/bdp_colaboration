@@ -13,15 +13,33 @@ import ActDialog from "./ActDialog";
 import ElementDialog from "./ElementDialog";
 
 const schema = yup.object({
-    comments: yup.string().required(),
+    proposito: yup.string().required(),
+    objetivo: yup.string().required(),
+    descripcion: yup.string().required(),
+    alcance: yup.string().required(),
+    presupuesto: yup.string().required(),
+    riesgos: yup.string().required(),
+    gerencia: yup.string().required(),
+    mecanimos: yup.string().required(),
   }).required();
 
 const ActModal = (props) => {
 
-    const { register, formState:{ errors } } = useForm({
-        resolver: yupResolver(schema)
+    const { register, handleSubmit, formState:{ errors } } = useForm({
+        mode: 'onChange',
+        resolver: yupResolver(schema),
+        defaultValues: {
+            proposito: "",
+            objetivo: "",
+            descripcion: "",
+            alcance: "",
+            presupuesto: "",
+            riesgos: "",
+            gerencia: "",
+            mecanimos: "",
+        }
     });
-    // const onSubmit = data => console.log(data);
+    const onSubmit = data => console.log(data);
 
     const [modalShowAct, setModalShowAct] = useState(false);
     const [modalShowElement, setModalShowElement] = useState(false);
@@ -34,22 +52,45 @@ const ActModal = (props) => {
             </Modal.Title>
         </Modal.Header>
         <Modal.Body className="px-4">
-            <Row>
-                <Col>
-                    <TextareaForm name="comments" label="Problema y propósito" type="text" register={register} errors={errors} />
-                </Col>
-                <Col>
-                    <TextareaForm name="comments" label="Objetivos" type="text" register={register} errors={errors} />
-                </Col>
-            </Row>
-            <Row>
-                <Col>
-                    <TextareaForm name="comments" label="Descripción del modelo de intervención" type="text" register={register} errors={errors} />
-                </Col>
-                <Col>
-                    <TextareaForm name="comments" label="Alcance" type="text" register={register} errors={errors} />
-                </Col>
-            </Row>
+            <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
+                <Row>
+                    <Col>
+                        <TextareaForm name="proposito" label="Problema y propósito" type="text" register={register} errors={errors} />
+                    </Col>
+                    <Col>
+                        <TextareaForm name="objetivo" label="Objetivos" type="text" register={register} errors={errors} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <TextareaForm name="descripcion" label="Descripción del modelo de intervención" type="text" register={register} errors={errors} />
+                    </Col>
+                    <Col>
+                        <TextareaForm name="alcance" label="Alcance" type="text" register={register} errors={errors} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <TextareaForm name="presupuesto" label="Presupuesto" type="text" register={register} errors={errors} />
+                    </Col>
+                    <Col>
+                        <TextareaForm name="riesgos" label="Riesgos, supuestos y restricciones" type="text" register={register} errors={errors} />
+                    </Col>
+                </Row>
+                <Row>
+                    <Col>
+                        <TextareaForm name="gerencia" label="Gerencia y equipo" type="text" register={register} errors={errors} />
+                    </Col>
+                    <Col>
+                        <TextareaForm name="mecanimos" label="Mecanismos de control de cambios y monitoreo" type="text" register={register} errors={errors} />
+                    </Col>
+                </Row>
+                <Row className="d-flex flex-row-reverse pr-3">
+                    <Button className="btn-sumit" type="submit" variant="primary" >
+                        <i className="bi bi-send-fill"></i>
+                    </Button>
+                </Row>
+            </form>
             <Row className="d-flex flex-row justify-content-between align-items-center mb-3">
                     <p className="mb-0 w-25">Cronograma</p>
                     <Button className="btn-modal" variant="outline-primary" onClick={() => setModalShowAct(true)}>+ Actividad</Button>
@@ -91,14 +132,7 @@ const ActModal = (props) => {
                     </tr>
                 </tbody>
             </Table>
-            <Row className="mb-3">
-                <Col>
-                    <TextareaForm name="comments" label="Presupuesto" type="text" register={register} errors={errors} />
-                </Col>
-                <Col>
-                    <TextareaForm name="comments" label="Riesgos, supuestos y restricciones" type="text" register={register} errors={errors} />
-                </Col>
-            </Row>
+            
             <Row className="d-flex flex-row justify-content-between align-items-center mb-3">
                     <p className="mb-0 w-50">Estructura Organizacional</p>
                     <Button className="btn-modal" variant="outline-primary" onClick={() => setModalShowElement(true)}>+ Elemento</Button>
@@ -141,14 +175,7 @@ const ActModal = (props) => {
                     </tr>
                 </tbody>
             </Table>
-            <Row>
-                <Col>
-                    <TextareaForm name="comments" label="Gerencia y equipo" type="text" register={register} errors={errors} />
-                </Col>
-                <Col>
-                    <TextareaForm name="comments" label="Mecanismos de control de cambios y monitoreo" type="text" register={register} errors={errors} />
-                </Col>
-            </Row>
+            
         </Modal.Body>
         <Modal.Footer className="py-2" >
             <Button variant="secondary" onClick={props.onHide}>Cerrar</Button>

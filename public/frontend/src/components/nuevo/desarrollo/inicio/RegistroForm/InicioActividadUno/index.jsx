@@ -87,10 +87,10 @@ const InicioActividadUno = () => {
           <Col xs={6}>
             <InputForm name="poblacion" label="Población" placeholder="%" register={register} errors={errors}/>
           </Col>
-          <Col xs={6}>
+          <Col xs={6} className="my-3">
             <InputForm name="costoTotal" label="Costo total" placeholder="USD" register={register} errors={errors}/>
           </Col>
-          <Col xs={6}>
+          <Col xs={6} className="my-3">
             <InputForm name="duracion" label="Duración" placeholder="Días" register={register} errors={errors}/>
           </Col>
         </Row>
@@ -98,9 +98,9 @@ const InicioActividadUno = () => {
           <CheckboxForm name="aceptaInstrumentoFinanciero" label="Instrumento financiero" register={register} errors={errors}/>
           <SelectForm name="tipoInstrumentoFinanciero" label="Tipo de instrumento financiero" options="option 1" register={register} errors={errors}/>          
         </Row>
-        <Row className="d-flex flex-row-reverse pr-3">
-          <Button className="w-25" type="submit" variant="primary" >
-            icon
+        <Row className="d-flex flex-row-reverse pr-3 mt-4">
+          <Button className="btn-sumit" type="submit" variant="primary" >
+            <i className="bi bi-send-fill"></i>
           </Button>
         </Row>
       </form>
