@@ -22,7 +22,7 @@ function ActDialog(props) {
 });
 const onSubmit = data => console.log(data);
   return (
-    <Modal dialogClassName=""
+    <Modal
       {...props}
       size="sm"
       aria-labelledby="contained-modal-title-vcenter"

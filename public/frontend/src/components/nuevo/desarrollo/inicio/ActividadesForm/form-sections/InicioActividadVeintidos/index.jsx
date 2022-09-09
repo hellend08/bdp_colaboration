@@ -5,6 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import TextareaForm from '../../../../../../commons/forms/TextareaForm';
 import "./style.css"
+import pdf from "../../../../../../../assets/document/HELENVASQUEZS-CV.pdf"
 
 const schema = yup.object({
     comments: yup.string().required(),
@@ -24,12 +25,16 @@ const InicioActividadDVeintidos = () => {
                     <TextareaForm name="comments" label="Comentarios" type="text" register={register} errors={errors} />
                 </Row>
                 <Row  className="d-flex flex-row-reverse gap-3 pr-3 mb-3">
-                    <Button className="btn-download align-middle" variant="secondary">Acta de constitución
-                        <i className="bi bi-cloud-arrow-down ml-3 fs-5 align-middle space-icon"></i>
-                    </Button>
-                    <Button className="btn-download align-middle gap-3" variant="secondary">Matriz interesados
-                        <i className="bi bi-cloud-arrow-down ml-3 fs-5 align-middle space-icon"></i>
-                    </Button>
+                    <a className="btn-download mr-content" href={pdf} target="_blank" rel="noopener noreferrer" download="HELENVASQUEZS-CV.pdf">
+                        <Button className="btn-download align-middle" variant="secondary" download="HELENVASQUEZS-CV.pdf">Acta de constitución
+                            <i className="bi bi-cloud-arrow-down ml-3 fs-5 align-middle space-icon"></i>
+                        </Button>
+                    </a>
+                    <a className="btn-download" href={pdf} target="_blank" rel="noopener noreferrer" download="HELENVASQUEZS-CV.pdf">
+                        <Button className="btn-download align-middle gap-3" variant="secondary">Matriz interesados
+                            <i className="bi bi-cloud-arrow-down ml-3 fs-5 align-middle space-icon"></i>
+                        </Button>
+                    </a>
                 </Row>
                 {/* <input type="submit" /> */}
                 {/* <Button type="submit" variant="primary">V</Button> */}

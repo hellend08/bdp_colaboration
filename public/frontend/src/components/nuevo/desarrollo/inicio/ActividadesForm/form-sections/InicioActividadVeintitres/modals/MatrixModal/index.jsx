@@ -1,11 +1,15 @@
+import React, { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
+import MatrixDialog from "./MatrixDialog";
 import "./style.css"
 
 const MatrixModal = (props) => {
+
+  const [modalShowAct, setModalShowMatrix] = useState(false);
 
   return (
     <Modal dialogClassName="layout-w" {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
@@ -15,8 +19,9 @@ const MatrixModal = (props) => {
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="px-4">
-        <Row className="mt-3">
-        <Col sm={10}>
+        
+        <Button className='mb-3' variant="outline-primary" onClick={() => setModalShowMatrix(true)}>+ Elemento</Button>
+        <MatrixDialog show={modalShowAct} onHide={() => setModalShowMatrix(false)} />
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr className="fs-6 fw-semibold lh-sm align-middle size-sm">
@@ -27,7 +32,7 @@ const MatrixModal = (props) => {
                         <th>Acciones Posibles Positivas</th>
                         <th>Acciones Posibles Negativas</th>
                         <th>Estrategias</th>
-                        <th className="text-center">Eliminar</th>
+                        {/* <th className="text-center">Eliminar</th> */}
                     </tr>
                 </thead>
                 <tbody>
@@ -39,9 +44,9 @@ const MatrixModal = (props) => {
                         <td>Bajo</td>
                         <td>Bajo</td>
                         <td>Descripción</td>
-                        <td className="d-flex flex-row">
+                        {/* <td className="d-flex flex-row">
                             <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td>
+                        </td> */}
                     </tr>
                     <tr>
                         <td>Nombre</td>
@@ -51,9 +56,9 @@ const MatrixModal = (props) => {
                         <td>Medio</td>
                         <td>Medio</td>
                         <td>Descripción</td>
-                        <td className="d-flex flex-row">
+                        {/* <td className="d-flex flex-row">
                             <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td>
+                        </td> */}
                     </tr>
                     <tr>
                         <td>Nombre</td>
@@ -63,17 +68,13 @@ const MatrixModal = (props) => {
                         <td>Alto</td>
                         <td>Alto</td>
                         <td>Descripción</td>
-                        <td className="d-flex flex-row">
+                        {/* <td className="d-flex flex-row">
                             <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td>
+                        </td> */}
                     </tr>
                 </tbody>
             </Table>
-            </Col>
-            <Col sm={2}>
-                <Button variant="outline-primary">Elemento +</Button>
-            </Col>
-        </Row>
+           
       </Modal.Body>
       <Modal.Footer className="py-2" >
         <Button variant="secondary" onClick={props.onHide}>Cerrar</Button>
