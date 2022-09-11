@@ -1,6 +1,6 @@
 import Nav from 'react-bootstrap/Nav';
 
-const TabsDesa = () => {
+const TabsEtapas = () => {
     return (
       <Nav variant="tabs" defaultActiveKey="/home">
         <Nav.Item>
@@ -19,4 +19,4 @@ const TabsDesa = () => {
     );
 }
   
-export default TabsDesa;
+export default TabsEtapas;

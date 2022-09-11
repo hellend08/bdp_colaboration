@@ -4,7 +4,6 @@ import TabsEtapas from '../../components/commons/layouts/TabsEtapas';
 import Inicio from '../../components/nuevo/desarrollo/Inicio';
 
 const NuevoProyectoDesarrollo = () => {
-
     return (
         <Row className="px-5 pt-3">
             <Col xs={12}>

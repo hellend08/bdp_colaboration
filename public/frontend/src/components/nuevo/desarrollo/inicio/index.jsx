@@ -1,14 +1,14 @@
 import { useEffect, useState } from 'react';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import RegistroForm from './RegistroForm';
-import ActividadesForm from './ActividadesForm';
+import Registro from './Registro';
+import Actividades from './Actividades';
 import TabsActividades from '../../../commons/layouts/TabsActivades';
-import { activities } from '../../../../constants/desarrollo/inicio';
-import { activitiesStore } from '../../../../store/commonsStore';
+import { tabsActividades } from '../../../../constants/nuevo/desarrollo/inicio';
+import { tabsActividadesStore } from '../../../../store/nuevo/desarrollo/inicio';
 
 const Inicio = () => {
-    const { activity, activityEnabled , selectActivity, enableActivity } = activitiesStore();
+    const { activity, activityEnabled , selectActivity, enableActivity } = tabsActividadesStore();
     //const [activity, setActivity] = useState("inicio-registro");
 
     useEffect(() => {
@@ -19,13 +19,13 @@ const Inicio = () => {
     return (
         <Row>
             <Col xs={12}>
-                <TabsActividades activities={activities}  activityEnabled={activityEnabled} activity={activity} selectActivity={selectActivity}/>
+                <TabsActividades activities={tabsActividades}  activityEnabled={activityEnabled} activity={activity} selectActivity={selectActivity}/>
             </Col>
             <Col xs={12} >
             {
                 activity === "inicio-registro" ?
-                <RegistroForm />
-                : <ActividadesForm />
+                <Registro />
+                : <Actividades />
             }
             </Col>
         </Row>
