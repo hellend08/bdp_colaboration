@@ -5,18 +5,18 @@ import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Textarea from '../../../../../commons/forms/Textarea';
 import InputFileModal from "../../../../../commons/forms/InputFileModal";
-import { ActividadVeintitresSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
-
+import { ActividadVeintitresSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
+import ActaConstitucionModal from "../../modals/ActaConstitucionalModal";
+import MatrizInteresadosModal from "../../modals/MatrizInteresadosModal";
 
 const ActividadVeintitres = () => {
-
     const { register, handleSubmit, formState:{ errors } } = useForm({
         mode: 'onChange',
         resolver: yupResolver(ActividadVeintitresSchema),
         defaultValues: {
             comentarios: "",
-            actaCons: "",
-            matriz: "",
+            actaConst: "",
+            matrizInt: "",
         }
     });
 
@@ -31,10 +31,10 @@ const ActividadVeintitres = () => {
                 </Row>
                 <Row className="mb-3 gap-4">
                     <Col>
-                        <InputFileModal name="actaCons"  label="Acta constitución" register={register} errors={errors} />
+                        <InputFileModal name="actaConst"  label="Acta constitución" register={register} errors={errors} modal="acta-constitucion" />
                     </Col>
                     <Col>
-                        <InputFileModal name="matriz" label="Matriz interesados" register={register} errors={errors} />
+                        <InputFileModal name="matrizInt" label="Matriz interesados" register={register} errors={errors} modal="matriz-interesados" />
                     </Col>
                 </Row>
                 <Row className="d-flex flex-row-reverse pr-3">
@@ -43,6 +43,8 @@ const ActividadVeintitres = () => {
                     </Button>
                 </Row>
             </form>
+            <ActaConstitucionModal />
+            <MatrizInteresadosModal />
         </>
       
     );

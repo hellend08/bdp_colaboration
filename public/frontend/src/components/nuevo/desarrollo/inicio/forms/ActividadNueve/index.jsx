@@ -6,7 +6,7 @@ import Button from 'react-bootstrap/Button';
 // import InputForm  from "../../../../../../commons/forms/InputForm";
 import Select from "../../../../../commons/forms/Select";
 import Textarea from '../../../../../commons/forms/Textarea';
-import { ActividadNueveSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
+import { ActividadNueveSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
 const ActividadNueve = () => {

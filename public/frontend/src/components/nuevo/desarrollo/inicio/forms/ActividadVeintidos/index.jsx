@@ -5,7 +5,7 @@ import Button from 'react-bootstrap/Button';
 import Textarea from '../../../../../commons/forms/Textarea';
 import "./style.css"
 import pdf from "../../../../../../assets/document/HELENVASQUEZS-CV.pdf";
-import { ActividadDVeintidosSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
+import { ActividadDVeintidosSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
 const ActividadDVeintidos = () => {

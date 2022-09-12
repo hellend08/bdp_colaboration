@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Select from "../../../../../commons/forms/Select";
-import { ActividadVeinticincoSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
+import { ActividadVeinticincoSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
 const ActividadVeinticinco = () => {

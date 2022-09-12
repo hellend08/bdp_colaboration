@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Select from "../../../../../commons/forms/Select";
 import Textarea from '../../../../../commons/forms/Textarea';
-import { ActividadQuinceSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
+import { ActividadQuinceSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
 const ActividadQuince = () => {

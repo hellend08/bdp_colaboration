@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/esm/Row';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Input from '../../../../../../commons/forms/Input';
-
+import { dialogStore } from "../../../../../../../store/commons"
 
 const schema = yup.object({
   nivel: yup.string().required(),
@@ -15,8 +15,9 @@ const schema = yup.object({
   //age: yup.number().positive().integer().required(),
 }).required();
 
-function ElementDialog(props) {
-
+function NuevoestructuraOrgDialog() {
+  const { dialog, selectDialog } = dialogStore();
+  const name = "nuevo-estructura-org";
   const { register, handleSubmit, formState:{ errors } } = useForm({
       resolver: yupResolver(schema)
   });
@@ -25,9 +26,10 @@ function ElementDialog(props) {
     e.target.reset()
   };
 
+  const onClose = () => selectDialog("");
+
   return (
-    <Modal dialogClassName=""
-      {...props}
+    <Modal show={name === dialog}  onHide={onClose}
       size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -50,7 +52,7 @@ function ElementDialog(props) {
                 <Form.Control type="text" placeholder="Nombre" />
             </Form.Group> */}
             <Row className="d-flex flex-row-reverse pr-3 mt-4">
-                <Button onClick={props.onHide} className="btn-sumit" type="submit" variant="primary">
+                <Button onClick={onClose} className="btn-sumit" type="submit" variant="primary">
                     <i className="bi bi-send-fill"></i>
                 </Button>
             </Row>
@@ -60,4 +62,4 @@ function ElementDialog(props) {
   );
 }
 
-export default ElementDialog;
+export default NuevoestructuraOrgDialog;
