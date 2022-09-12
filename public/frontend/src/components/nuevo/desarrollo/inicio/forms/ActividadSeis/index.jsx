@@ -3,6 +3,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Select from "../../../../../commons/forms/Select";
+import InputFile from "../../../../../commons/forms/InputFile";
+import Col from 'react-bootstrap/Col';
 import { ActividadSeisSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
 
 
@@ -23,7 +25,12 @@ const ActividadSeis = () => {
             <p>6.- Consulta a las Listas Especiales de Control (LEC)</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <Row className="mb-3">
-                    <Select name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
+                    <Col>
+                        <Select name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
+                    </Col>
+                    <Col>
+                        <InputFile label="Reporte"></InputFile>
+                    </Col>
                 </Row>
                 <Row className="d-flex flex-row-reverse pr-3">
                     <Button className="btn-sumit" type="submit" variant="primary">
