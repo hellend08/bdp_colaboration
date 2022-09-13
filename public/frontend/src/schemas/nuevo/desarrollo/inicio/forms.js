@@ -157,12 +157,12 @@ export const ActividadVeintiseisSchema = yup.object({
 
 
 export const ActaConstitucionalSchema = yup.object({
-    proposito: yup.string().required(),
+    problema_proposito: yup.string().required(),
     objetivo: yup.string().required(),
-    descripcion: yup.string().required(),
+    descripcion_modelo_intervencion: yup.string().required(),
     alcance: yup.string().required(),
     presupuesto: yup.string().required(),
-    riesgos: yup.string().required(),
-    gerencia: yup.string().required(),
-    mecanimos: yup.string().required(),
+    riesgos_supuestos_restricciones: yup.string().required(),
+    gerencia_equipo: yup.string().required(),
+    mecanismos_control_cambios: yup.string().required(),
 }).required();

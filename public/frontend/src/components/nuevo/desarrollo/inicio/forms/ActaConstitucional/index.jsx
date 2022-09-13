@@ -13,14 +13,14 @@ const ActaConstitucional = () => {
         mode: 'onChange',
         resolver: yupResolver(ActaConstitucionalSchema),
         defaultValues: {
-            proposito: "",
+            problema_proposito: "",
             objetivo: "",
-            descripcion: "",
+            descripcion_modelo_intervencion: "",
             alcance: "",
-            presupuesto: "",
-            riesgos: "",
-            gerencia: "",
-            mecanimos: "",
+            presupuesto: null,
+            riesgos_supuestos_restricciones: "",
+            gerencia_equipo: "",
+            mecanismos_control_cambios: "",
         }
     });
 
@@ -30,7 +30,7 @@ const ActaConstitucional = () => {
         <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
             <Row>
                 <Col>
-                    <Textarea name="proposito" label="Problema y propósito" type="text" register={register} errors={errors} />
+                    <Textarea name="problema_proposito" label="Problema y propósito" type="text" register={register} errors={errors} />
                 </Col>
                 <Col>
                     <Textarea name="objetivo" label="Objetivos" type="text" register={register} errors={errors} />
@@ -38,7 +38,7 @@ const ActaConstitucional = () => {
             </Row>
             <Row>
                 <Col>
-                    <Textarea name="descripcion" label="Descripción del modelo de intervención" type="text" register={register} errors={errors} />
+                    <Textarea name="descripcion_modelo_intervencion" label="Descripción del modelo de intervención" type="text" register={register} errors={errors} />
                 </Col>
                 <Col>
                     <Textarea name="alcance" label="Alcance" type="text" register={register} errors={errors} />
@@ -49,15 +49,15 @@ const ActaConstitucional = () => {
                     <Textarea name="presupuesto" label="Presupuesto" type="text" register={register} errors={errors} />
                 </Col>
                 <Col>
-                    <Textarea name="riesgos" label="Riesgos, supuestos y restricciones" type="text" register={register} errors={errors} />
+                    <Textarea name="riesgos_supuestos_restricciones" label="Riesgos, supuestos y restricciones" type="text" register={register} errors={errors} />
                 </Col>
             </Row>
             <Row>
                 <Col>
-                    <Textarea name="gerencia" label="Gerencia y equipo" type="text" register={register} errors={errors} />
+                    <Textarea name="gerencia_equipo" label="Gerencia y equipo" type="text" register={register} errors={errors} />
                 </Col>
                 <Col>
-                    <Textarea name="mecanimos" label="Mecanismos de control de cambios y monitoreo" type="text" register={register} errors={errors} />
+                    <Textarea name="mecanismos_control_cambios" label="Mecanismos de control de cambios y monitoreo" type="text" register={register} errors={errors} />
                 </Col>
             </Row>
             <Row className="d-flex flex-row-reverse pr-3">
