@@ -15,8 +15,8 @@ const ActividadVeintitres = () => {
         resolver: yupResolver(ActividadVeintitresSchema),
         defaultValues: {
             comentarios: "",
-            actaConst: "",
-            matrizInt: "",
+            // actaConst: "",
+            // matrizInt: "",
         }
     });
 
@@ -31,10 +31,11 @@ const ActividadVeintitres = () => {
                 </Row>
                 <Row className="mb-3 gap-4">
                     <Col>
-                        <InputFileModal name="actaConst"  label="Acta constitución" register={register} errors={errors} modal="acta-constitucion" />
+                        <InputFileModal   label="Acta constitución"  modal="acta-constitucion" />
+                        {/* name="actaConst" register={register} errors={errors} */}
                     </Col>
                     <Col>
-                        <InputFileModal name="matrizInt" label="Matriz interesados" register={register} errors={errors} modal="matriz-interesados" />
+                        <InputFileModal label="Matriz interesados" modal="matriz-interesados" />
                     </Col>
                 </Row>
                 <Row className="d-flex flex-row-reverse pr-3">
@@ -46,7 +47,6 @@ const ActividadVeintitres = () => {
             <ActaConstitucionModal />
             <MatrizInteresadosModal />
         </>
-      
     );
 }
 

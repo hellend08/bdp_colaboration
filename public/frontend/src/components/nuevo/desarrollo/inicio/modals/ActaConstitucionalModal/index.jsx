@@ -1,183 +1,29 @@
-import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from "yup";
+import React from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Table from 'react-bootstrap/Table';
-import Textarea from '../../../../../commons/forms/Textarea';
-import "./style.css"
-import NuevoCronogramaDialog from "./NuevoCronogramaDialog";
-import NuevoEstructuraOrgDialog from "./NuevoEstructuraOrgDialog";
-import { modalStore, dialogStore } from "../../../../../../store/commons"
-
-const schema = yup.object({
-    proposito: yup.string().required(),
-    objetivo: yup.string().required(),
-    descripcion: yup.string().required(),
-    alcance: yup.string().required(),
-    presupuesto: yup.string().required(),
-    riesgos: yup.string().required(),
-    gerencia: yup.string().required(),
-    mecanimos: yup.string().required(),
-  }).required();
+import ActaConstitucional from "../../forms/ActaConstitucional";
+import ActaCronograma from "../../tables/ActaCronograma";
+import ActaEstructuraOrg from "../../tables/ActaEstructuraOrg";
+import { modalStore } from "../../../../../../store/commons"
 
 const ActaConstitucionModal = () => {
+
     const { modal, selectModal } = modalStore();
-    const { selectDialog } = dialogStore();
     const name = "acta-constitucion";
-    const { register, handleSubmit, formState:{ errors } } = useForm({
-        mode: 'onChange',
-        resolver: yupResolver(schema),
-        defaultValues: {
-            proposito: "",
-            objetivo: "",
-            descripcion: "",
-            alcance: "",
-            presupuesto: "",
-            riesgos: "",
-            gerencia: "",
-            mecanimos: "",
-        }
-    });
-    const onSubmit = data => console.log(data);
+
     const onClose = () => selectModal("");
 
     return (
-    <Modal show={name === modal}  onHide={onClose} size="lg"  centered >
+    <Modal show={name === modal}  onHide={onClose} size="lg" centered >
         <Modal.Header className="py-3 px-4" closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
             Acta Constitución
             </Modal.Title>
         </Modal.Header>
         <Modal.Body className="px-4">
-            <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
-                <Row>
-                    <Col>
-                        <Textarea name="proposito" label="Problema y propósito" type="text" register={register} errors={errors} />
-                    </Col>
-                    <Col>
-                        <Textarea name="objetivo" label="Objetivos" type="text" register={register} errors={errors} />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Textarea name="descripcion" label="Descripción del modelo de intervención" type="text" register={register} errors={errors} />
-                    </Col>
-                    <Col>
-                        <Textarea name="alcance" label="Alcance" type="text" register={register} errors={errors} />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Textarea name="presupuesto" label="Presupuesto" type="text" register={register} errors={errors} />
-                    </Col>
-                    <Col>
-                        <Textarea name="riesgos" label="Riesgos, supuestos y restricciones" type="text" register={register} errors={errors} />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Textarea name="gerencia" label="Gerencia y equipo" type="text" register={register} errors={errors} />
-                    </Col>
-                    <Col>
-                        <Textarea name="mecanimos" label="Mecanismos de control de cambios y monitoreo" type="text" register={register} errors={errors} />
-                    </Col>
-                </Row>
-                <Row className="d-flex flex-row-reverse pr-3">
-                    <Button className="btn-sumit" type="submit" variant="primary" >
-                        <i className="bi bi-send-fill"></i>
-                    </Button>
-                </Row>
-            </form>
-            <Row className="d-flex flex-row justify-content-between align-items-center mb-3">
-                    <p className="mb-0 w-25">Cronograma</p>
-                    <Button className="btn-modal" variant="outline-primary" onClick={() => selectDialog('nuevo-cronograma')}>+ Actividad</Button>
-            </Row>
-            <NuevoCronogramaDialog />
-
-            <Table striped bordered hover size="sm">
-                <thead>
-                    <tr className="fs-6 fw-semibold lh-sm align-middle size-sm">
-                        <th>Hitos</th>
-                        <th>Inicio</th>
-                        <th>Fin</th>
-                        {/* <th className="text-center">Eliminar</th> */}
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Actividad 1</td>
-                        <td>12/12/9999</td>
-                        <td>12/12/9999</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
-                    </tr>
-                    <tr>
-                        <td>Actividad 2</td>
-                        <td>12/12/9999</td>
-                        <td>12/12/9999</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
-                    </tr>
-                    <tr>
-                        <td>Actividad 3</td>
-                        <td>12/12/9999</td>
-                        <td>12/12/9999</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
-                    </tr>
-                </tbody>
-            </Table>
-            
-            <Row className="d-flex flex-row justify-content-between align-items-center mb-3">
-                    <p className="mb-0 w-50">Estructura Organizacional</p>
-                    <Button className="btn-modal" variant="outline-primary" onClick={() => selectDialog('nuevo-estructura-org')}>+ Elemento</Button>
-            </Row>
-            <NuevoEstructuraOrgDialog />
-
-            <Table striped bordered hover size="sm">
-                <thead>
-                    <tr className="fs-6 fw-semibold lh-sm align-middle size-sm">
-                        <th>Nivel</th>
-                        <th>Cargo</th>
-                        <th>Nombre</th>
-                        {/* <th className="text-center">Eliminar</th> */}
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1</td>
-                        <td>Objetivo</td>
-                        <td>Descripción</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
-                    </tr>
-                    <tr>
-                        <td>1.1</td>
-                        <td>Componente</td>
-                        <td>Descripción</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
-                    </tr>
-                    <tr>
-                        <td>1.1.1</td>
-                        <td>Producto</td>
-                        <td>Descripción</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
-                    </tr>
-                </tbody>
-            </Table>
-            
+            <ActaConstitucional />
+            <ActaCronograma />
+            <ActaEstructuraOrg />
         </Modal.Body>
         <Modal.Footer className="py-2" >
             <Button variant="primary" onClick={onClose}>ACEPTAR</Button>

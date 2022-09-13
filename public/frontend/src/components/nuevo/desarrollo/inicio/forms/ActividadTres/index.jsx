@@ -1,15 +1,14 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-// import Inpu  from "../../../../commons/forms/Input";
-import Select from "../../../../../commons/forms/Select";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import Select from "../../../../../commons/forms/Select";
 import { ActividadTresSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
 const ActividadTres = () => {
-  
+
     const { register, handleSubmit, formState:{ errors } } = useForm({
         mode: 'onChange',
         resolver: yupResolver(ActividadTresSchema),
@@ -40,7 +39,6 @@ const ActividadTres = () => {
                 </Row>
             </form>
         </>
-      
     );
 }
 

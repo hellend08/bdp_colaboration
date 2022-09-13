@@ -39,7 +39,7 @@ const ActividadDos = () => {
                         <InputFile label="Nota conceptual" />
                     </Col>
                 </Row>
-                <Row className="my-3 gap-4">
+                <Row className="mb-3 gap-4">
                     <Col> 
                         <InputDate name="startDate" label="Fecha inicio" type="date" register={register} errors={errors} />
                     </Col>
@@ -57,7 +57,6 @@ const ActividadDos = () => {
                 </Row>
             </form>
         </>
-      
     );
 }
 

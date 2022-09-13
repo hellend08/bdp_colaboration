@@ -3,10 +3,10 @@ import Form from 'react-bootstrap/Form';
 import "./style.css"
 
 
-const InputFile = ({label }) => {
+const InputFile = ({label}) => {
 
       const handleChange = event => {
-        const fileUploaded = event.target.files[0].name;
+        const fileUploaded = event.target.files[0];
        console.log(fileUploaded);
       };
 
@@ -16,8 +16,8 @@ const InputFile = ({label }) => {
             <Form.Group controlId="formFile" >
                 <Form.Label className="d-inline mb-2 position-relative">
                     <input type="text" class="form-control" />
-                    <span className="position-absolute file-icon">
-                        <i className="bi bi-paperclip icon-icon "></i>
+                    <span className="position-absolute container-icon">
+                        <i className="bi bi-paperclip icon-file "></i>
                     </span>
                 </Form.Label>
                 <Form.Control onChange={handleChange} type="file" className="d-none" />

@@ -2,16 +2,14 @@
     background: red !important;
 } */
 
-.file-icon {
-    /* background-color: #e9ecef; */
-    /* padding: .5rem 1rem; */
+.container-icon {
     top: 2px;
     right: 0;
     text-align: right;
     width: 100%;
 }
 
-.icon-icon {
+.icon-file {
     background-color: #e9ecef;
     font-size: 1.45rem;
     padding: .2rem 1rem;

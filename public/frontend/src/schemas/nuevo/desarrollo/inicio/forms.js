@@ -136,8 +136,8 @@ export const ActividadDVeintidosSchema = yup.object({
 
 export const ActividadVeintitresSchema = yup.object({
     comentarios: yup.string().required(),
-    actaCons: yup.string().required(),
-    matriz: yup.string().required(),
+    // actaCons: yup.string().required(),
+    // matriz: yup.string().required(),
 }).required();
 
 
@@ -153,4 +153,16 @@ export const ActividadVeinticincoSchema = yup.object({
 
 export const ActividadVeintiseisSchema = yup.object({
     cumplimiento: yup.string().required(),
+}).required();
+
+
+export const ActaConstitucionalSchema = yup.object({
+    proposito: yup.string().required(),
+    objetivo: yup.string().required(),
+    descripcion: yup.string().required(),
+    alcance: yup.string().required(),
+    presupuesto: yup.string().required(),
+    riesgos: yup.string().required(),
+    gerencia: yup.string().required(),
+    mecanimos: yup.string().required(),
 }).required();
