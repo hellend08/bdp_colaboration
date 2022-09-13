@@ -26,7 +26,7 @@ const ActividadNueve = () => {
         <>
             <p>9.- Evaluación y recomendación de aprobación a Directorio</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
-                <Select name="observacion" label="Observaciones" options="Choose option" register={register} errors={errors}/>
+                <Select name="observacion" label="Observaciones" options={["Choose option"]} register={register} errors={errors}/>
                 {/* <Row className="my-3 gap-4">
                     <Col> 
                         <Input name="startDate" label="Fecha inicio" type="date" placeholder="icono date" register={register} errors={errors} />

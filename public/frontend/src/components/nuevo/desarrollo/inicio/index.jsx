@@ -4,7 +4,7 @@ import Col from 'react-bootstrap/Col';
 import Registro from './Registro';
 import Actividades from './Actividades';
 import TabsActividades from '../../../commons/layouts/TabsActivades';
-import { tabsActividadesInicioDesa } from '../../../../constants/nuevo/desarrollo/inicio';
+import { TABS_ACTIVIDADES_INICIO_DESA } from '../../../../constants/nuevo/desarrollo/inicio';
 import { tabsActividadesStore } from '../../../../store/commons';
 
 const Inicio = () => {
@@ -19,7 +19,7 @@ const Inicio = () => {
     return (
         <Row>
             <Col xs={12}>
-                <TabsActividades activities={tabsActividadesInicioDesa}  activityEnabled={activityEnabled} activity={activity} selectActivity={selectActivity}/>
+                <TabsActividades activities={TABS_ACTIVIDADES_INICIO_DESA}  activityEnabled={activityEnabled} activity={activity} selectActivity={selectActivity}/>
             </Col>
             <Col xs={12} >
             {

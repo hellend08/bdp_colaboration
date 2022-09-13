@@ -23,7 +23,7 @@ const ActividadVeinticinco = () => {
             <p>25.- Aprobación del Acta de Constitución y designación de Responsable del Proyecto</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <Row className="mb-3">
-                    <Select name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
+                    <Select name="cumplimiento" label="Cumplimiento" options={["Choose option"]} register={register} errors={errors}/>
                 </Row>
                 <Row className="d-flex flex-row-reverse pr-3">
                     <Button className="btn-sumit" type="submit" variant="primary">

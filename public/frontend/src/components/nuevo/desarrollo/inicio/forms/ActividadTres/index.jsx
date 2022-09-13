@@ -6,7 +6,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import { ActividadTresSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
-
+import { TIPOS_PROPONENTE } from '../../../../../../constants/nuevo/desarrollo/inicio';
 
 const ActividadTres = () => {
   
@@ -27,10 +27,10 @@ const ActividadTres = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <Row className="mb-3 gap-4">
                     <Col> 
-                        <Select name="tipoProponente" label="Tipo proponente" options="Choose option" register={register} errors={errors}/>
+                        <Select name="tipoProponente" label="Tipo proponente" options={TIPOS_PROPONENTE} register={register} errors={errors}/>
                     </Col>
                     <Col> 
-                        <Select name="areaBDP" label="Area BDP" options="Choose option" register={register} errors={errors}/>
+                        <Select name="areaBDP" label="Area BDP" options={["Choose option"]} register={register} errors={errors}/>
                     </Col>
                 </Row>
                 <Row className="d-flex flex-row-reverse pr-3">

@@ -4,6 +4,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import Button from 'react-bootstrap/Button';
 import Dropdown from 'react-bootstrap/Dropdown';
+import './style.css';
 
 const Header = () => {
     return (
@@ -16,7 +17,7 @@ const Header = () => {
                         <Dropdown.Toggle id="dropdown-autoclose-true">
                             Nuevo
                         </Dropdown.Toggle>
-                        <Dropdown.Menu>
+                        <Dropdown.Menu className="nuevo-menu">
                             <div>
                                 <NavLink to="/Nuevo_Proyecto_Desarrollo">Proyecto Desarrollo</NavLink>
                             </div>

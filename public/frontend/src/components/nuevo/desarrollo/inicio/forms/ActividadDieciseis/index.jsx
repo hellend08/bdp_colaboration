@@ -19,7 +19,7 @@ const ActividadDieciseis = () => {
             <p>16.- Recepción de resolución donde se apruebe el contrato con el Financiador por parte de Directorio y solicitud de la gestión de firmas</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <Row className="mb-3">
-                    <Select name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
+                    <Select name="cumplimiento" label="Cumplimiento" options={["Choose option"]} register={register} errors={errors}/>
                 </Row>
                 <Row className="d-flex flex-row-reverse pr-3">
                     <Button className="btn-sumit" type="submit" variant="primary">

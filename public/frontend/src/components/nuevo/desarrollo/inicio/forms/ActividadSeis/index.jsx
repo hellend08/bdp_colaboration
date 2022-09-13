@@ -23,7 +23,7 @@ const ActividadSeis = () => {
             <p>6.- Consulta a las Listas Especiales de Control (LEC)</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <Row className="mb-3">
-                    <Select name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
+                    <Select name="cumplimiento" label="Cumplimiento" options={["Choose option"]} register={register} errors={errors}/>
                 </Row>
                 <Row className="d-flex flex-row-reverse pr-3">
                     <Button className="btn-sumit" type="submit" variant="primary">

@@ -2,26 +2,25 @@ import * as yup from "yup";
 
 export const ActividadUnoSchema = yup.object({
     descripcion: yup.string().required(),
-    tipo: yup.string().required(),
-    sector: yup.string().required(),
-    actividadEconomica: yup.string().required(),
-    origen: yup.string().required(),
-    cumplimientoODS: yup.string().required(),
-    objetivos: yup.string().required(),
+    tipo_id: yup.number().positive().required(),
+    sector_id: yup.number().positive().required(),
+    actividad_economica_id: yup.number().positive().required(),
+    origen_id: yup.number().positive().required(),
+    cumplimiento_ods_id: yup.number().positive().required(),
+    objetivo: yup.string().required(),
     justificacion: yup.string().required(),
     enfoque: yup.string().required(),
     aceptaComponentesMitigación: yup.boolean().required(),
-    areaMitigacion: yup.string().required(),
+    area_mitigacion_id: yup.number().positive().required(),
     mitigacionEstimada: yup.string().required(),
     aceptaComponentesAdaptacion: yup.boolean().required(),
-    cantBeneficiarios: yup.number().positive().integer().required(),
-    poblacion: yup.number().positive().required(),
-    costoTotal: yup.number().positive().required(),
-    duracion: yup.number().positive().integer().required(),
+    n_beneficiarios: yup.number().positive().integer().required(),
+    poblacion: yup.string().required(),
+    costo_total: yup.number().positive().required(),
+    duracion: yup.string().required(),
     aceptaInstrumentoFinanciero: yup.boolean().required(),
-    tipoInstrumentoFinanciero: yup.string().required()
+    tipo_instrumento_financiero_id: yup.number().positive().required()
 }).required();
-
 
 export const ActividadDosSchema = yup.object({
     compliance: yup.string().required(),
