@@ -6,7 +6,8 @@ import Row from 'react-bootstrap/esm/Row';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import InputDate from '../../../../../../commons/forms/InputDate';
-import "./style.css"
+import { dialogStore } from "../../../../../../../store/commons"
+import "./style.css";
 
 const schema = yup.object({
   startDate: yup.string().required(),
@@ -16,14 +17,17 @@ const schema = yup.object({
 }).required();
 
 
-function ActDialog(props) {
+function NuevoCronogramaDialog() {
+  const { dialog, selectDialog } = dialogStore();
+  const name = "nuevo-cronograma";
   const { register, handleSubmit, formState:{ errors } } = useForm({
     resolver: yupResolver(schema)
-});
-const onSubmit = data => console.log(data);
+  });
+  const onSubmit = data => console.log(data);
+  const onClose = () => selectDialog("");
+
   return (
-    <Modal
-      {...props}
+    <Modal show={name === dialog}  onHide={onClose}
       size="sm"
       aria-labelledby="contained-modal-title-vcenter"
       centered
@@ -45,7 +49,7 @@ const onSubmit = data => console.log(data);
                 <Form.Control type="date" placeholder="Hito" />
             </Form.Group> */}
             <Row className="d-flex flex-row-reverse pr-3 mt-4">
-                <Button onClick={props.onHide} className="btn-sumit" type="submit" variant="primary">
+                <Button onClick={onClose} className="btn-sumit" type="submit" variant="primary">
                     <i className="bi bi-send-fill"></i>
                 </Button>
             </Row>
@@ -55,4 +59,4 @@ const onSubmit = data => console.log(data);
   );
 }
 
-export default ActDialog;
+export default NuevoCronogramaDialog;

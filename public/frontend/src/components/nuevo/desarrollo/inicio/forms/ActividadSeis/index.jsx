@@ -1,11 +1,11 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Select from "../../../../../commons/forms/Select";
 import InputFile from "../../../../../commons/forms/InputFile";
-import Col from 'react-bootstrap/Col';
-import { ActividadSeisSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
+import { ActividadSeisSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
 const ActividadSeis = () => {
@@ -29,7 +29,7 @@ const ActividadSeis = () => {
                         <Select name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
                     </Col>
                     <Col>
-                        <InputFile label="Reporte"></InputFile>
+                        <InputFile label="Reporte" />
                     </Col>
                 </Row>
                 <Row className="d-flex flex-row-reverse pr-3">

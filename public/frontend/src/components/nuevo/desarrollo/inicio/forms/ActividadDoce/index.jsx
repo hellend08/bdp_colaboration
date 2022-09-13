@@ -3,7 +3,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import Row from 'react-bootstrap/Row';
 import Button from 'react-bootstrap/Button';
 import Textarea from '../../../../../commons/forms/Textarea';
-import { ActividadDoceSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
+import { ActividadDoceSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
 const ActividadDoce = () => {

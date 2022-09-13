@@ -9,7 +9,7 @@ import InputFile from "../../../../../commons/forms/InputFile";
 import Textarea from '../../../../../commons/forms/Textarea';
 import "../style.css"
 import 'bootstrap-icons/font/bootstrap-icons.css';
-import { ActividadDosSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
+import { ActividadDosSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
 const ActividadDos = () => {
@@ -36,7 +36,7 @@ const ActividadDos = () => {
                         <Select name="compliance" label="Cumplimiento" options="Choose option" register={register} errors={errors} />
                     </Col>
                     <Col>
-                        <InputFile label="Nota conceptual"></InputFile>
+                        <InputFile label="Nota conceptual" />
                     </Col>
                 </Row>
                 <Row className="my-3 gap-4">

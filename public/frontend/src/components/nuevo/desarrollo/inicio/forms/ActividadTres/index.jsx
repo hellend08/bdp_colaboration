@@ -5,7 +5,7 @@ import Select from "../../../../../commons/forms/Select";
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { ActividadTresSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
+import { ActividadTresSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
 const ActividadTres = () => {

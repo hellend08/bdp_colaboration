@@ -9,8 +9,9 @@ import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
 import Textarea from '../../../../../commons/forms/Textarea';
 import "./style.css"
-import ActDialog from "./ActDialog";
-import ElementDialog from "./ElementDialog";
+import NuevoCronogramaDialog from "./NuevoCronogramaDialog";
+import NuevoEstructuraOrgDialog from "./NuevoEstructuraOrgDialog";
+import { modalStore, dialogStore } from "../../../../../../store/commons"
 
 const schema = yup.object({
     proposito: yup.string().required(),
@@ -23,8 +24,10 @@ const schema = yup.object({
     mecanimos: yup.string().required(),
   }).required();
 
-const ActModal = (props) => {
-
+const ActaConstitucionModal = () => {
+    const { modal, selectModal } = modalStore();
+    const { selectDialog } = dialogStore();
+    const name = "acta-constitucion";
     const { register, handleSubmit, formState:{ errors } } = useForm({
         mode: 'onChange',
         resolver: yupResolver(schema),
@@ -40,12 +43,10 @@ const ActModal = (props) => {
         }
     });
     const onSubmit = data => console.log(data);
-
-    const [modalShowAct, setModalShowAct] = useState(false);
-    const [modalShowElement, setModalShowElement] = useState(false);
+    const onClose = () => selectModal("");
 
     return (
-        <Modal {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
+    <Modal show={name === modal}  onHide={onClose} size="lg"  centered >
         <Modal.Header className="py-3 px-4" closeButton>
             <Modal.Title id="contained-modal-title-vcenter">
             Acta Constitución
@@ -93,9 +94,10 @@ const ActModal = (props) => {
             </form>
             <Row className="d-flex flex-row justify-content-between align-items-center mb-3">
                     <p className="mb-0 w-25">Cronograma</p>
-                    <Button className="btn-modal" variant="outline-primary" onClick={() => setModalShowAct(true)}>+ Actividad</Button>
+                    <Button className="btn-modal" variant="outline-primary" onClick={() => selectDialog('nuevo-cronograma')}>+ Actividad</Button>
             </Row>
-            <ActDialog show={modalShowAct} onHide={() => setModalShowAct(false)} />
+            <NuevoCronogramaDialog />
+
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr className="fs-6 fw-semibold lh-sm align-middle size-sm">
@@ -135,9 +137,9 @@ const ActModal = (props) => {
             
             <Row className="d-flex flex-row justify-content-between align-items-center mb-3">
                     <p className="mb-0 w-50">Estructura Organizacional</p>
-                    <Button className="btn-modal" variant="outline-primary" onClick={() => setModalShowElement(true)}>+ Elemento</Button>
+                    <Button className="btn-modal" variant="outline-primary" onClick={() => selectDialog('nuevo-estructura-org')}>+ Elemento</Button>
             </Row>
-            <ElementDialog show={modalShowElement} onHide={() => setModalShowElement(false)} />
+            <NuevoEstructuraOrgDialog />
 
             <Table striped bordered hover size="sm">
                 <thead>
@@ -178,13 +180,10 @@ const ActModal = (props) => {
             
         </Modal.Body>
         <Modal.Footer className="py-2" >
-            <Button variant="secondary" onClick={props.onHide}>Cerrar</Button>
-            <Button variant="primary">Guardar</Button>
+            <Button variant="primary" onClick={onClose}>ACEPTAR</Button>
         </Modal.Footer>
-
-        </Modal>
-        
+    </Modal>
     );
 }
 
-export default ActModal;
+export default ActaConstitucionModal;

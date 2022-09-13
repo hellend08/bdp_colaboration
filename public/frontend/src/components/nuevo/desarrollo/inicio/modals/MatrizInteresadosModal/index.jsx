@@ -4,23 +4,26 @@ import Modal from 'react-bootstrap/Modal';
 // import Row from 'react-bootstrap/Row';
 // import Col from 'react-bootstrap/Col';
 import Table from 'react-bootstrap/Table';
-import MatrixDialog from "./MatrixDialog";
+import NuevaMatrizIntDialog from "./NuevaMatrizIntDialog";
+import { modalStore, dialogStore } from "../../../../../../store/commons"
 import "./style.css";
 
-const MatrixModal = (props) => {
-  const [modalShowAct, setModalShowMatrix] = useState(false);
+const MatrizInteresadosModal = () => {
+  const { modal, selectModal } = modalStore();
+  const { selectDialog } = dialogStore();
+  const name = "matriz-interesados";
+  const onClose = () => selectModal("");
 
   return (
-    <Modal dialogClassName="layout-w" {...props} size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
+    <Modal show={name === modal}  onHide={onClose}  dialogClassName="layout-w"  size="lg" aria-labelledby="contained-modal-title-vcenter" centered >
       <Modal.Header className="py-2 px-4" closeButton>
         <Modal.Title id="contained-modal-title-vcenter">
           Matriz de Interesados
         </Modal.Title>
       </Modal.Header>
       <Modal.Body className="px-4">
-        
-        <Button className='mb-3' variant="outline-primary" onClick={() => setModalShowMatrix(true)}>+ Elemento</Button>
-        <MatrixDialog show={modalShowAct} onHide={() => setModalShowMatrix(false)} />
+        <Button className='mb-3' variant="outline-primary" onClick={() => selectDialog("nueva-matriz-int")}>+ Elemento</Button>
+        <NuevaMatrizIntDialog />
             <Table striped bordered hover size="sm">
                 <thead>
                     <tr className="fs-6 fw-semibold lh-sm align-middle size-sm">
@@ -76,11 +79,10 @@ const MatrixModal = (props) => {
            
       </Modal.Body>
       <Modal.Footer className="py-2" >
-        <Button variant="secondary" onClick={props.onHide}>Cerrar</Button>
-        <Button variant="primary">Guardar</Button>
+        <Button variant="primary" onClick={onClose}>ACEPTAR</Button>
       </Modal.Footer>
     </Modal>
   );
 }
 
-export default MatrixModal;
+export default MatrizInteresadosModal;

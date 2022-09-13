@@ -2,35 +2,19 @@ import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Button from 'react-bootstrap/Button';
-import ActModal from '../../../nuevo/desarrollo/Inicio/modals/ActModal';
-import MatrixModal from '../../../nuevo/desarrollo/Inicio/modals/MatrixModal';
+import { modalStore } from "../../../../store/commons"
 
-const InputFileModal = ({name, type, label, register, errors}) => {
-
-    const [modalShow, setModalShow] = useState(false);
-    const [modalShowTwo, setModalShowTwo] = useState(false);
-
+const InputFileModal = ({name, type, label, register, errors, modal}) => {
+    const { selectModal } = modalStore()
     return (
         <Form.Group md="4" controlId="validationCustomUsername">
-            {/* <InputGroup hasValidation>
-                <Form.Control {...register(name)} type={type}  />
-                { placeholder && <InputGroup.Text id="inputGroupPrepend">{placeholder}</InputGroup.Text>}
-            </InputGroup> */}
             <Form.Label>{label}</Form.Label>
             <InputGroup hasValidation>
                 <Form.Control {...register(name)} type={type} />
-                <Button variant="secondary" id="button-addon2" onClick={() => setModalShow(true)}>
+                <Button variant="secondary" id="button-addon2" onClick={() => selectModal(modal)}>
                 +
                 </Button>
-                <p>{errors.firstName?.message}</p>  
-                <ActModal
-                show={modalShow}
-                onHide={() => setModalShow(false)}
-                />
-                <MatrixModal
-                show={modalShowTwo}
-                onHide={() => setModalShowTwo(false)}
-                />
+                {/*<p>{errors.firstName?.message}</p>*/} 
             </InputGroup>
         </Form.Group>
     );

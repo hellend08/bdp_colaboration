@@ -1,9 +1,11 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
 import Textarea from '../../../../../commons/forms/Textarea';
-import { ActividadCuatroSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
+// import InputFile from "../../../../../commons/forms/InputFile";
+import { ActividadCuatroSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
 const ActividadCuatro = () => {
@@ -26,6 +28,9 @@ const ActividadCuatro = () => {
                     <Textarea name="comentarios" label="Comentarios" register={register} errors={errors} />
                 </Row>
                 <Row className="d-flex flex-row-reverse pr-3">
+                    {/* <Col>
+                    <InputFile label="Solicitud" />
+                    </Col> */}
                     <Button className="btn-sumit" type="submit" variant="primary">
                         <i className="bi bi-send-fill"></i>
                     </Button>

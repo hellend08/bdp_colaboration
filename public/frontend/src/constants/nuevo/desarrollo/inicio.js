@@ -1,4 +1,4 @@
-export const tabsActividades = [
+export const tabsActividadesInicioDesa = [
     { key: "inicio-registro", name: "Registro" },
     { key: "inicio-actividades", name: "Actividades" }
 ];

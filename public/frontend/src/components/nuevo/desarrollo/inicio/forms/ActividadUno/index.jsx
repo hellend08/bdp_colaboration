@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import { ActividadUnoSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio';
-import { tabsActividadesStore } from '../../../../../../store/nuevo/desarrollo/inicio';
+import { ActividadUnoSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
+import { tabsActividadesStore } from '../../../../../../store/commons';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';

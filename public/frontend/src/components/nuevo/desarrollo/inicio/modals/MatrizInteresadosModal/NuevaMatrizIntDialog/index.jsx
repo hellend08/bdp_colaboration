@@ -7,6 +7,7 @@ import Col from "react-bootstrap/esm/Col";
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import Input from '../../../../../../commons/forms/Input';
+import { dialogStore } from "../../../../../../../store/commons"
 import "./style.css"
 
 
@@ -17,16 +18,17 @@ const schema = yup.object({
     //age: yup.number().positive().integer().required(),
   }).required();
 
-function MatrixDialog(props) {
-
+function NuevaMatrizIntDialog() {
+    const { dialog, selectDialog } = dialogStore();
+    const name = "nueva-matriz-int";
     const { register, handleSubmit, formState:{ errors } } = useForm({
         resolver: yupResolver(schema)
     });
     const onSubmit = data => console.log(data);
+    const onClose = () => selectDialog("");
 
     return (
-        <Modal dialogClassName=""
-        {...props}
+        <Modal show={name === dialog}  onHide={onClose}
         size="lg"
         aria-labelledby="contained-modal-title-vcenter"
         centered
@@ -71,7 +73,7 @@ function MatrixDialog(props) {
                     <Form.Control type="text" placeholder="Nombre" />
                 </Form.Group> */}
                 <Row className="d-flex flex-row-reverse pr-3">
-                    <Button onClick={props.onHide} className="btn-sumit" type="submit" variant="primary">
+                    <Button onClick={onClose} className="btn-sumit" type="submit" variant="primary">
                         <i className="bi bi-send-fill"></i>
                     </Button>
                 </Row>
@@ -81,4 +83,4 @@ function MatrixDialog(props) {
     );
 }
 
-export default MatrixDialog;
+export default NuevaMatrizIntDialog;
