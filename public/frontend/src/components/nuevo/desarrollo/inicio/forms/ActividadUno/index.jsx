@@ -44,31 +44,11 @@ const ActividadUno = () => {
       }
     });
 
-    /*{
-      "descripcion": "",
-      "tipo_id": 1,
-      "sector_id": 1,
-      "actividad_economica_id": 1,
-      "origen_id": 1,
-      "cumplimiento_ods_id": 1,
-      "objetivo": "",
-      "justificacion": "",
-      "enfoque": "",
-      "area_mitigacion_id": 1,
-      "mitigacion_estimada": "",
-      "n_beneficiarios": 1,
-      "poblacion": "",
-      "costo_total": 22.8,
-      "duracion": "",
-      "tipo_instrumento_financiero_id": 1
-  }*/
-  console.log('errors => ', errors);
     const onSubmit = data => {
       if(!Object.values(errors).length) {
         selectActivity("inicio-actividades");
         enableActivity("inicio-actividades")
       }
-      console.log(data);
       projectDesaEntity().POST(data);
     }
 
