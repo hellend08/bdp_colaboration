@@ -9,6 +9,7 @@ import Input from '../../../../../commons/forms/Input';
 import Textarea from '../../../../../commons/forms/Textarea';
 import Select from '../../../../../commons/forms/Select';
 import Checkbox from '../../../../../commons/forms/Checkbox';
+import InputFile from "../../../../../commons/forms/InputFile";
 import { validateBtnForm } from '../../../../../../utils/validate-forms';
 
 const ActividadUno = () => {
@@ -97,6 +98,15 @@ const ActividadUno = () => {
         <Row>  
           <Checkbox name="aceptaInstrumentoFinanciero" label="Instrumento financiero" register={register} errors={errors}/>
           <Select name="tipoInstrumentoFinanciero" label="Tipo de instrumento financiero" options="option 1" register={register} errors={errors}/>          
+        </Row>
+        <Row>
+          <p>Documentos de respaldo</p>
+          <Col>
+          <InputFile label="Documento de No objeción" />
+          </Col>
+          <Col>
+          <InputFile label="Propuesta física" />
+          </Col>
         </Row>
         <Row className="d-flex flex-row-reverse pr-3 mt-4">
           <Button className="btn-sumit" type="submit" variant="primary" >
