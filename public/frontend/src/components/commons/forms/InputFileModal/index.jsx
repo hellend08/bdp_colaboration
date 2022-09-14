@@ -32,7 +32,7 @@ const InputFileModal = ({label, modal}) => {
                 <Form.Group controlId="formFile" className="position-absolute">
                     <Button className="btn-file-modal" variant="secondary" id="button-addon2" onClick={() => selectModal(modal)}> + </Button>
                     <Form.Label className="d-inline mb-2 position-relative">
-                        <input type="text" class="form-control" />
+                        <input type="text" className="form-control" />
                         <span className="position-absolute container-icon-file-modal">
                             <i className="bi bi-paperclip icon-file-modal"></i>
                         </span>

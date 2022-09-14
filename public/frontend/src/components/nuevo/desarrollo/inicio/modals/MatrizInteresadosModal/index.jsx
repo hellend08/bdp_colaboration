@@ -1,10 +1,6 @@
 import React from "react";
 import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
-// import Row from 'react-bootstrap/Row';
-// import Col from 'react-bootstrap/Col';
-// import Table from 'react-bootstrap/Table';
-// import NuevaMatrizIntDialog from "./NuevaMatrizIntDialog";
 import MatrizInteresados from "../../tables/MatrizInteresados";
 import { modalStore, dialogStore } from "../../../../../../store/commons"
 import "./style.css";

@@ -15,5 +15,4 @@ const Input = ({name, type, label, placeholder, textAlternative, register, error
         </Form.Group>
     );
 }
-  
 export default Input;

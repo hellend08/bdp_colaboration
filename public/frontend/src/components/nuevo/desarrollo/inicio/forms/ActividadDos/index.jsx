@@ -10,7 +10,7 @@ import Textarea from '../../../../../commons/forms/Textarea';
 import "../style.css"
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import { ActividadDosSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
-
+import { CUMPLIMIENTOS } from '../../../../../../constants/nuevo/desarrollo/inicio';
 
 const ActividadDos = () => {
     
@@ -33,7 +33,7 @@ const ActividadDos = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <Row className="gap-4">
                     <Col>
-                        <Select name="compliance" label="Cumplimiento" options="Choose option" register={register} errors={errors} />
+                        <Select name="compliance" label="Cumplimiento" options={CUMPLIMIENTOS} register={register} errors={errors} />
                     </Col>
                     <Col>
                         <InputFile label="Nota conceptual" />

@@ -6,7 +6,6 @@ const Home = () => {
   return (
     <>
       <Header/>
-      <br />
       <Container fluid>
         <Outlet />
       </Container>

@@ -26,7 +26,7 @@ const ActividadOnce = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <Row className="mb-3">
                     <Col>
-                        <Select name="aprobacion" label="Aprobación" options="Choose option" register={register} errors={errors} />
+                        <Select name="aprobacion" label="Aprobación" options={["Choose option"]} register={register} errors={errors} />
                     </Col>
                     <Col>
                         <InputFile label="Nota conceptual" />

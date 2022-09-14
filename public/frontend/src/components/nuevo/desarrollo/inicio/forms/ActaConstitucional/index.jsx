@@ -4,6 +4,7 @@ import Textarea from '../../../../../commons/forms/Textarea';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
+import { constitucionalActDesaEntity } from "../../../../../../services/actions/project-desarrollo";
 import { ActaConstitucionalSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
 
@@ -24,7 +25,13 @@ const ActaConstitucional = () => {
         }
     });
 
-    const onSubmit = data => console.log(data);
+    const onSubmit = data => {
+        if(!Object.values(errors).length) {
+            console.log("error")
+        }
+        constitucionalActDesaEntity().POST(data);
+        console.log(data);
+    }
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="mb-4">

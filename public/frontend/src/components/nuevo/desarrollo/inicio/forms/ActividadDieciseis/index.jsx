@@ -22,7 +22,7 @@ const ActividadDieciseis = () => {
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
                 <Row className="mb-3">
                     <Col>
-                        <Select name="cumplimiento" label="Cumplimiento" options="Choose option" register={register} errors={errors}/>
+                        <Select name="cumplimiento" label="Cumplimiento" options={["Choose option"]} register={register} errors={errors}/>
                     </Col>
                     <Col>
                         <InputFile label="Resolución" />

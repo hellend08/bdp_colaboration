@@ -14,8 +14,8 @@ const InputFile = ({label}) => {
         <>
             <p className="mb-2">{label}</p>
             <Form.Group controlId="formFile" >
-                <Form.Label className="d-inline mb-2 position-relative">
-                    <input type="text" class="form-control" />
+                <Form.Label className="d-inline-block w-100 mb-2 position-relative">
+                    <input type="text" className="form-control" />
                     <span className="position-absolute container-icon">
                         <i className="bi bi-paperclip icon-file "></i>
                     </span>

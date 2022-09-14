@@ -1,19 +1,19 @@
-export const tabsActividadesInicioDesa = [
+export const TABS_ACTIVIDADES_INICIO_DESA = [
     { key: "inicio-registro", name: "Registro" },
     { key: "inicio-actividades", name: "Actividades" }
 ];
 
-export const tiposProyecto = [
+export const TIPOS_PROYECTO = [
     "Proyecto",
     "Programa"
 ];
 
-export const sectoresProyecto = [
+export const SECTORES_PROYECTO = [
     "Público",
     "Privado"
 ];
 
-export const ActividadesEconomicas = [
+export const ACTIVIDADES_ECONOMICAS = [
     "Agricultura y ganadería",
     "Caza, silvicultura y pesca",
     "Extracción de petróleo crudo y gas natural",
@@ -34,13 +34,13 @@ export const ActividadesEconomicas = [
     "Actividades atípicas"
 ]
 
-export const listaOrigenProyecto = [
+export const LISTA_ORIGEN_PROYECTO = [
     "Persona Natural",
     "Persona Juridica",
     "UBDP SAM"
 ]
 
-export const cumplimientosODS = [
+export const CUMPLIMIENTOS_ODS = [
     "Fin de la Pobreza",
     "Hambre Cero",
     "Salud y Bienestar",
@@ -60,12 +60,12 @@ export const cumplimientosODS = [
     " Alianzas para lograr los Objetivos"
 ]
 
-export const tiposProponente = [
+export const TIPOS_PROPONENTE = [
     "BDP",
     "Externo"
 ]
 
-export const areasResultado = [
+export const AREAS_RESULTADO = [
     "Acceso a la energía y generación de energía",
     "Transporte de bajas emisiones",
     "Edificios, ciudades e industrias y electrodomésticos",
@@ -76,7 +76,7 @@ export const areasResultado = [
     "Ecosistema y servicios ecosistémicos"
 ]
 
-export const tiposInstrumentoFinanciero = [
+export const TIPOS_INSTRUMENTO_FINANCIERO = [
     "Donación",
     "Donación reembolsable",
     "Garantías",
@@ -84,4 +84,10 @@ export const tiposInstrumentoFinanciero = [
     "Préstamo subordinado", 
     "Préstamo senior", 
     "Otro: especifique"
+]
+
+export const CUMPLIMIENTOS = [
+    "Sí",
+    "No",
+    "Parcialmente",
 ]
