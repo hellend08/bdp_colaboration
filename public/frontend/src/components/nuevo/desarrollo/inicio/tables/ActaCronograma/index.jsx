@@ -11,6 +11,24 @@ const ActaCronograma = () => {
 
     const { selectDialog } = dialogStore();
 
+    const listActaCronograma = [
+        {
+            hitos: "Actividad 1",
+            inicio: "12/12/9999",
+            fin: "12/12/9999",
+        },
+        {
+            hitos: "Actividad 2",
+            inicio: "12/12/9999",
+            fin: "12/12/9999",
+        },
+        {
+            hitos: "Actividad 3",
+            inicio: "12/12/9999",
+            fin: "12/12/9999",
+        },
+    ]
+
     return (
         <>
             <Row className="d-flex flex-row justify-content-between align-items-center mb-3">
@@ -28,30 +46,34 @@ const ActaCronograma = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    {
+                        listActaCronograma.map( (item,index)=>
+                            <tr key={index + 1}>
+                                <td>{item.hitos}</td>
+                                <td>{item.inicio}</td>
+                                <td>{item.fin}</td>
+                            </tr>
+                        )
+                    }
+
+                    {/* <td className="d-flex flex-row">
+                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
+                        </td> */}
+                    {/* <tr>
                         <td>Actividad 1</td>
                         <td>12/12/9999</td>
                         <td>12/12/9999</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
                     </tr>
                     <tr>
                         <td>Actividad 2</td>
                         <td>12/12/9999</td>
                         <td>12/12/9999</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
                     </tr>
                     <tr>
                         <td>Actividad 3</td>
                         <td>12/12/9999</td>
                         <td>12/12/9999</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
-                    </tr>
+                    </tr> */}
                 </tbody>
             </Table>
         </>

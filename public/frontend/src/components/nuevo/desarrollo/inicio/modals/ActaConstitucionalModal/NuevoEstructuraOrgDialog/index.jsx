@@ -45,9 +45,9 @@ function NuevoestructuraOrgDialog() {
       <Modal.Body className='px-4 container-shadow'>
         <h5>Crear Elemento</h5>
         <Form onSubmit={handleSubmit(onSubmit)} className='mt-3 px-3'>
-            <Input name="nivel" label="" textAlternative="Nivel" register={register} errors={errors} />
-            <Input name="cargo" label="" textAlternative="Cargo" register={register} errors={errors} />
-            <Input name="nombre" label="" textAlternative="Nombre" register={register} errors={errors} />
+            <Input name="nivel" label="Nivel" register={register} errors={errors} />
+            <Input name="cargo" label="Cargo" register={register} errors={errors} />
+            <Input name="nombre" label="Nombre" register={register} errors={errors} />
             <Row className="d-flex flex-row-reverse pr-3 mt-4">
                 <Button className="btn-sumit" type="submit" variant="primary">
                 {/* onClick={onClose} */}

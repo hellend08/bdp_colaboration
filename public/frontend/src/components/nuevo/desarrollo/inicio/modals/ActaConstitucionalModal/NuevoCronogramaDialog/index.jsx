@@ -45,7 +45,7 @@ function NuevoCronogramaDialog() {
       <Modal.Body className='px-4 container-shadow'>
         <h5>Crear Actividad</h5>
         <Form onSubmit={handleSubmit(onSubmit)} className='mt-4 px-3'>
-            <Input name="hito" textAlternative="Hito" label="" placeholder="" register={register} errors={errors}/>
+            <Input name="hito" label="Hito" placeholder="" register={register} errors={errors}/>
             <Row className="mb-3">
                 <InputDate name="fecha_inicio" label="Fecha Inicio" type="date" register={register} errors={errors} />
             </Row>

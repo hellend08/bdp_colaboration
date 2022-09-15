@@ -50,28 +50,28 @@ function NuevaMatrizIntDialog() {
             <Form onSubmit={handleSubmit(onSubmit)} className='mt-3 px-3'>
                 <Row>
                     <Col>
-                        <Input name="interesado" label="" textAlternative="Interesado" register={register} errors={errors} />
+                        <Input name="interesado" label="Interesado" register={register} errors={errors} />
                     </Col>
                     <Col>
-                        <Input name="objetivo" label="" textAlternative="Objetivo Meta" register={register} errors={errors} />
+                        <Input name="objetivo" label="Objetivo Meta" register={register} errors={errors} />
                     </Col>
                     <Col>
-                        <Input name="nivel_interes" label="" textAlternative="Nivel de Interés" register={register} errors={errors} />
+                        <Input name="nivel_interes" label="Nivel de Interés" register={register} errors={errors} />
                     </Col>
                 </Row>
                 <Row>
                     <Col>
-                        <Input name="nivel_influencia" label="" textAlternative="Nivel de Influencia" register={register} errors={errors} />
+                        <Input name="nivel_influencia" label="Nivel de Influencia" register={register} errors={errors} />
                     </Col>
                     <Col>
-                        <Input name="acciones_posibles_positivas" label="" textAlternative="Acciones Posibles Positivas" register={register} errors={errors} />
+                        <Input name="acciones_posibles_positivas" label="Acciones Posibles Positivas" register={register} errors={errors} />
                     </Col>
                     <Col>
-                        <Input name="comments" label="" textAlternative="Acciones Posibles Negativas" register={register} errors={errors} />
+                        <Input name="comments" label="Acciones Posibles Negativas" register={register} errors={errors} />
                     </Col>
                 </Row>
                 <Row className="mb-4">
-                    <Input name="estrategias" label="" textAlternative="Estrategias" register={register} errors={errors} />
+                    <Input name="estrategias" label="Estrategias" register={register} errors={errors} />
                 </Row>
                 <Row className="d-flex flex-row-reverse pr-3">
                     <Button className="btn-sumit" type="submit" variant="primary">

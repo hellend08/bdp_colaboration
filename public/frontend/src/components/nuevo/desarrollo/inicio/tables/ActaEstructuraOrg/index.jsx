@@ -10,6 +10,24 @@ const ActaEstructuraOrg = () => {
 
     const { selectDialog } = dialogStore();
 
+    const listActaEstructuraOrg = [
+        {
+            nivel: "1",
+            cargo: "Objetivo",
+            nombre: "Descripción",
+        },
+        {
+            nivel: "1.1",
+            cargo: "Componente",
+            nombre: "Descripción",
+        },
+        {
+            nivel: "1.1.1",
+            cargo: "Producto",
+            nombre: "Descripción",
+        },
+    ]
+
     return (
         <>
             <Row className="d-flex flex-row justify-content-between align-items-center mb-3">
@@ -27,30 +45,33 @@ const ActaEstructuraOrg = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
+                    {
+                        listActaEstructuraOrg.map( (item, index) => 
+                            <tr key={index + 1}>
+                                <td>{item.nivel}</td>
+                                <td>{item.cargo}</td>
+                                <td>{item.nombre}</td>
+                            </tr>
+                        )
+                    }
+                    {/* <td className="d-flex flex-row">
+                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
+                        </td> */}
+                    {/* <tr>
                         <td>1</td>
                         <td>Objetivo</td>
                         <td>Descripción</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
                     </tr>
                     <tr>
                         <td>1.1</td>
                         <td>Componente</td>
                         <td>Descripción</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
                     </tr>
                     <tr>
                         <td>1.1.1</td>
                         <td>Producto</td>
                         <td>Descripción</td>
-                        {/* <td className="d-flex flex-row">
-                            <Button className="rounded-circle py-0 mx-auto" size="sm" variant="danger">-</Button>
-                        </td> */}
-                    </tr>
+                    </tr> */}
                 </tbody>
             </Table>
         </>
