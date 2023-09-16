@@ -1,0 +1,18 @@
+/* input[type="file"] {
+    background: red !important;
+} */
+
+.container-icon {
+    top: 2px;
+    right: 0;
+    text-align: right;
+    width: 100%;
+}
+
+.icon-file {
+    background-color: #e9ecef;
+    font-size: 1.45rem;
+    padding: .2rem 1rem;
+    border-top-right-radius: .375rem;
+    border-bottom-right-radius: .375rem;
+}

@@ -3,7 +3,11 @@
     margin-right: .7rem !important;
 }
 
+.btn-sumit-w {
+    width: 5rem !important;
+}
+
 .btn-download {
-    width: 15rem !important;
-    margin-right: .7rem !important;
+    width: 20rem !important;
+    /* margin-right: .7rem !important; */
 }
