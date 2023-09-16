@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import Textarea from '../../../../../commons/forms/Textarea';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Button from 'react-bootstrap/Button';
 import { constitucionalActDesaEntity } from "../../../../../../services/actions/project-desarrollo";
 import { ActaConstitucionalSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 
@@ -35,7 +35,7 @@ const ActaConstitucional = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
-            <Row>
+            {/* <Row>
                 <Col>
                     <Textarea name="problema_proposito" label="Problema y propósito" type="text" register={register} errors={errors} />
                 </Col>
@@ -71,7 +71,7 @@ const ActaConstitucional = () => {
                 <Button className="btn-sumit" type="submit" variant="primary" >
                     <i className="bi bi-send-fill"></i>
                 </Button>
-            </Row>
+            </Row> */}
         </form>
     )
 }

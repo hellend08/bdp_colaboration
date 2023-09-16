@@ -23,8 +23,8 @@ import ActividadVeintitres from "../forms/ActividadVeintitres";
 import ActividadVeinticuatro from "../forms/ActividadVenticuatro";
 import ActividadVeinticinco from "../forms/ActividadVeinticinco";
 import ActividadVeintiseis from "../forms/ActividadVeintiseis";
-import Row from 'react-bootstrap/Row';
-import Button from 'react-bootstrap/Button';
+// import Row from 'react-bootstrap/Row';
+// import Button from 'react-bootstrap/Button';
 
 
 const Actividades = () => {
@@ -56,9 +56,9 @@ const Actividades = () => {
             <ActividadVeinticinco></ActividadVeinticinco>
             <ActividadVeintiseis></ActividadVeintiseis>
             <p className="mt-5">Lorem ipsum lorem ipsum lorem ipsum lorem ipsum  Lorem ipsum lorem ipsum lorem ipsum lorem ipsum</p>
-            <Row className="d-flex flex-row-reverse mb-5 pr-3">
+            {/* <Row className="d-flex flex-row-reverse mb-5 pr-3">
                 <Button className="w-25" variant="success">CONTINUAR</Button>
-            </Row>
+            </Row> */}
         </>
     )
 }

@@ -1,9 +1,9 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Select from "../../../../../commons/forms/Select";
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Button from 'react-bootstrap/Button';
+// import Select from "../../../../../commons/forms/Select";
 import { ActividadTresSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
 import { TIPOS_PROPONENTE } from '../../../../../../constants/nuevo/desarrollo/inicio';
 
@@ -24,7 +24,7 @@ const ActividadTres = () => {
         <>
             <p>3.- Revisión del proponente es un área/unidad del banco</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
-                <Row className="mb-3 gap-4">
+                {/* <Row className="mb-3 gap-4">
                     <Col> 
                         <Select name="tipoProponente" label="Tipo proponente" options={TIPOS_PROPONENTE} register={register} errors={errors}/>
                     </Col>
@@ -36,7 +36,7 @@ const ActividadTres = () => {
                     <Button className="btn-sumit" type="submit" variant="primary">
                         <i className="bi bi-send-fill"></i>
                     </Button>
-                </Row>
+                </Row> */}
             </form>
         </>
     );

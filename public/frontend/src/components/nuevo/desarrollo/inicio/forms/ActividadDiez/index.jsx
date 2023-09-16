@@ -1,8 +1,8 @@
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Button from 'react-bootstrap/Button';
 import Textarea from '../../../../../commons/forms/Textarea';
 import InputFile from "../../../../../commons/forms/InputFile";
 import { ActividadDiezSchema } from '../../../../../../schemas/nuevo/desarrollo/inicio/forms';
@@ -24,7 +24,7 @@ const ActividadDiez = () => {
         <>
             <p className="mb-0">10.- Presentación de la Nota Conceptual al Financiador</p>
             <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
-                <Row className="mt-3">
+                {/* <Row className="mt-3">
                     <Textarea name="comentarios" label="Comentarios" type="text" register={register} errors={errors} />
                 </Row>
                 <Row className="d-flex flex-row">
@@ -36,7 +36,7 @@ const ActividadDiez = () => {
                             <i className="bi bi-send-fill"></i>
                         </Button>
                     </Col>
-                </Row>
+                </Row> */}
             </form>
         </>
     );

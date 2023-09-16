@@ -8,14 +8,14 @@ import {
   AREAS_RESULTADO
 } from '../../../../../../constants/nuevo/desarrollo/inicio';
 import { projectDesaEntity } from '../../../../../../services/actions/project-desarrollo'
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Button from 'react-bootstrap/Button';
-import Input from '../../../../../commons/forms/Input';
-import Textarea from '../../../../../commons/forms/Textarea';
-import Select from '../../../../../commons/forms/Select';
-import Checkbox from '../../../../../commons/forms/Checkbox';
-import InputFile from "../../../../../commons/forms/InputFile";
+// import Row from 'react-bootstrap/Row';
+// import Col from 'react-bootstrap/Col';
+// import Button from 'react-bootstrap/Button';
+// import Input from '../../../../../commons/forms/Input';
+// import Textarea from '../../../../../commons/forms/Textarea';
+// import Select from '../../../../../commons/forms/Select';
+// import Checkbox from '../../../../../commons/forms/Checkbox';
+// import InputFile from "../../../../../commons/forms/InputFile";
 // import { validateBtnForm } from '../../../../../../utils/validate-forms';
 
 const ActividadUno = () => {
@@ -59,7 +59,7 @@ const ActividadUno = () => {
     return (
       <form onSubmit={handleSubmit(onSubmit)} className="mb-4">
         <p>1. Registro del proyecto</p>
-        <Textarea name="descripcion" label="Descripción" register={register} errors={errors}/>
+        {/* <Textarea name="descripcion" label="Descripción" register={register} errors={errors}/>
         <Row>
           <p>Datos del proyecto</p>
           <Col xs={6}>
@@ -120,7 +120,7 @@ const ActividadUno = () => {
           <Button className="btn-sumit" type="submit" variant="primary" >
             <i className="bi bi-send-fill"></i>
           </Button>
-        </Row>
+        </Row> */}
       </form>
     );
 }
